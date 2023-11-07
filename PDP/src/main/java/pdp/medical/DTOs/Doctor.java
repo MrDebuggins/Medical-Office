@@ -3,7 +3,6 @@ package pdp.medical.DTOs;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-import java.sql.Date;
 import java.util.List;
 
 @Entity

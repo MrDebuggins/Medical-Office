@@ -1,16 +1,40 @@
-package pdp.medical.controllers;
+package pdp.medical.pacients;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-import pdp.medical.DTOs.Pacient;
+import org.hibernate.annotations.NotFound;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.http.HttpResponse;
+import java.util.List;
 
 @RestController
 public class PacientController
 {
-    @GetMapping("/pacient/{id}")
-    Pacient one(@PathVariable Long id)
+    @Autowired
+    private PacientsRepository repository;
+
+    @Autowired
+    private PacientModelAssembler assembler;
+
+    @GetMapping("/pacients/{cnp}")
+    EntityModel<Pacient> one(@PathVariable String cnp)
+    {
+        Pacient pacient = repository.findByCNP(cnp);
+        return assembler.toModel(pacient);
+    }
+
+    @GetMapping("/pacients")
+    List<EntityModel<Pacient>> all()
     {
         return null;
+    }
+
+    @PostMapping("/pcaients")
+    EntityModel<Pacient> create(@RequestParam String cnp, @RequestParam Long id)
+    {
+        Pacient pacient = new Pacient(cnp, id);
+        repository.save(pacient);
+        return assembler.toModel(pacient);
     }
 }

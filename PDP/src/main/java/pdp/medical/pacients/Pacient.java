@@ -1,25 +1,46 @@
-package pdp.medical.DTOs;
+package pdp.medical.pacients;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import pdp.medical.DTOs.Appointment;
 
 import java.sql.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "pacients")
 public class Pacient {
-    private @Id String CNP;
-    private int id_user;
+    @Id
+    @Column(name = "cnp")
+    private String CNP;
+
+    @Column(name = "id_user")
+    private Long id_user;
+
+    @Column(name = "last_name")
     private String last_name;
+
+    @Column(name = "first_name")
     private String first_name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "born_date")
     private Date born;
+
+    @Column(name = "is_active")
     private boolean is_active;
+
+    @ManyToMany(mappedBy = "id_user")
+    @JoinColumn(name = "last_name")
     private List<Appointment> appointments;
 
-    public Pacient(String CNP, String last_name, String first_name, String email, String phone, Date born, boolean is_active, List<Appointment> appointments) {
+    public Pacient(String CNP, Long id, String last_name, String first_name, String email, String phone, Date born, boolean is_active, List<Appointment> appointments) {
         this.CNP = CNP;
+        this.id_user = id;
         this.last_name = last_name;
         this.first_name = first_name;
         this.email = email;
@@ -27,6 +48,12 @@ public class Pacient {
         this.born = born;
         this.is_active = is_active;
         this.appointments = appointments;
+    }
+
+    public Pacient(String cnp, Long id)
+    {
+        this.CNP = cnp;
+        this.id_user = id;
     }
 
     public String getCNP() {
@@ -37,11 +64,11 @@ public class Pacient {
         this.CNP = CNP;
     }
 
-    public int getId_user() {
+    public Long getId_user() {
         return id_user;
     }
 
-    public void setId_user(int id_user) {
+    public void setId_user(Long id_user) {
         this.id_user = id_user;
     }
 
