@@ -1,11 +1,10 @@
 package pdp.medical.pacients;
 
-import org.hibernate.annotations.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.*;
+import pdp.medical.DTOs.Pacient;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController

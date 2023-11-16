@@ -5,6 +5,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
+import pdp.medical.DTOs.Pacient;
 
 @Component
 public class PacientModelAssembler implements RepresentationModelAssembler<Pacient, EntityModel<Pacient>>

@@ -1,45 +1,39 @@
 package pdp.medical.DTOs;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
 import java.sql.Date;
 
 @Entity
+@Table(name = "programari")
 public class Appointment {
-    private int id_pacient;
-    private int id_doctor;
-    private Date date;
+    @EmbeddedId
+    AppointmentKey id;
+
+    @ManyToOne
+    @MapsId("id_pacient")
+    @JoinColumn(name = "id_pacient")
+    Pacient pacient;
+
+    @ManyToOne
+    @MapsId("id_doctor")
+    @JoinColumn(name = "id_doctor")
+    Doctor doctor;
+
+    @Column(name = "status")
     private Status status;
 
-    public Appointment(int id_pacient, int id_doctor, Date date, Status status) {
-        this.id_pacient = id_pacient;
-        this.id_doctor = id_doctor;
-        this.date = date;
+    public Appointment(AppointmentKey id, Status status) {
+        this.id = id;
         this.status = status;
     }
 
-    public int getId_pacient() {
-        return id_pacient;
+    public AppointmentKey getId() {
+        return id;
     }
 
-    public void setId_pacient(int id_pacient) {
-        this.id_pacient = id_pacient;
-    }
-
-    public int getId_doctor() {
-        return id_doctor;
-    }
-
-    public void setId_doctor(int id_doctor) {
-        this.id_doctor = id_doctor;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public void setId(AppointmentKey id) {
+        this.id = id;
     }
 
     public Status getStatus() {
@@ -50,3 +44,4 @@ public class Appointment {
         this.status = status;
     }
 }
+

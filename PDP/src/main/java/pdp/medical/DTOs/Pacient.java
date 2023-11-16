@@ -1,13 +1,14 @@
-package pdp.medical.pacients;
+package pdp.medical.DTOs;
 
 import jakarta.persistence.*;
 import pdp.medical.DTOs.Appointment;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "pacients")
+@Table(name = "pacienti")
 public class Pacient {
     @Id
     @Column(name = "cnp")
@@ -16,29 +17,28 @@ public class Pacient {
     @Column(name = "id_user")
     private Long id_user;
 
-    @Column(name = "last_name")
+    @Column(name = "nume")
     private String last_name;
 
-    @Column(name = "first_name")
+    @Column(name = "prenume")
     private String first_name;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "phone")
+    @Column(name = "telefon")
     private String phone;
 
-    @Column(name = "born_date")
+    @Column(name = "nascut")
     private Date born;
 
-    @Column(name = "is_active")
-    private boolean is_active;
+    @Column(name = "activ")
+    private boolean is_active = true;
 
-    @ManyToMany(mappedBy = "id_user")
-    @JoinColumn(name = "last_name")
-    private List<Appointment> appointments;
+    @OneToMany(mappedBy = "pacient")
+    private Set<Appointment> appointments;
 
-    public Pacient(String CNP, Long id, String last_name, String first_name, String email, String phone, Date born, boolean is_active, List<Appointment> appointments) {
+    public Pacient(String CNP, Long id, String last_name, String first_name, String email, String phone, Date born, boolean is_active, Set<Appointment> appointments) {
         this.CNP = CNP;
         this.id_user = id;
         this.last_name = last_name;
@@ -55,6 +55,8 @@ public class Pacient {
         this.CNP = cnp;
         this.id_user = id;
     }
+
+    public Pacient(){}
 
     public String getCNP() {
         return CNP;
@@ -120,11 +122,11 @@ public class Pacient {
         this.is_active = is_active;
     }
 
-    public List<Appointment> getAppointments() {
+    public Set<Appointment> getAppointments() {
         return appointments;
     }
 
-    public void setAppointments(List<Appointment> appointments) {
+    public void setAppointments(Set<Appointment> appointments) {
         this.appointments = appointments;
     }
 }
