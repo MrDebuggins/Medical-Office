@@ -1,8 +1,9 @@
 package pdp.medical.DTOs;
 
 import jakarta.persistence.*;
-
-import java.sql.Date;
+import pdp.medical.doctors.Doctor;
+import pdp.medical.patients.Patient;
+import pdp.medical.patients.Status;
 
 @Entity
 @Table(name = "programari")
@@ -13,7 +14,7 @@ public class Appointment {
     @ManyToOne
     @MapsId("id_pacient")
     @JoinColumn(name = "id_pacient")
-    Pacient pacient;
+    Patient patient;
 
     @ManyToOne
     @MapsId("id_doctor")

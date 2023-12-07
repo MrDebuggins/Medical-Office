@@ -1,4 +1,4 @@
-package pdp.medical.DTOs;
+package pdp.medical.patients;
 
 public enum Status {
     Onorat,

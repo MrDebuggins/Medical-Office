@@ -1,4 +1,4 @@
-package pdp.medical.DTOs;
+package pdp.medical.doctors;
 
 public enum Specialization {
     a,b

@@ -1,18 +1,16 @@
-package pdp.medical.DTOs;
+package pdp.medical.doctors;
 
 import jakarta.persistence.*;
 import pdp.medical.DTOs.Appointment;
 
-import java.sql.Date;
-import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "pacienti")
-public class Pacient {
+@Table(name = "doctori")
+public class Doctor {
     @Id
-    @Column(name = "cnp")
-    private String CNP;
+    @Column(name = "id_doctor")
+    private Long id_doctor;
 
     @Column(name = "id_user")
     private Long id_user;
@@ -29,41 +27,38 @@ public class Pacient {
     @Column(name = "telefon")
     private String phone;
 
-    @Column(name = "nascut")
-    private Date born;
+    @Column(name = "specializare")
+    private Specialization specialization;
 
-    @Column(name = "activ")
-    private boolean is_active = true;
-
-    @OneToMany(mappedBy = "pacient")
+    @OneToMany(mappedBy = "doctor")
     private Set<Appointment> appointments;
 
-    public Pacient(String CNP, Long id, String last_name, String first_name, String email, String phone, Date born, boolean is_active, Set<Appointment> appointments) {
-        this.CNP = CNP;
-        this.id_user = id;
+    public Doctor(Long id_doctor, Long id_user, String last_name, String first_name, String email, String phone, Specialization specialization, Set<Appointment> appointments) {
+        this.id_doctor = id_doctor;
+        this.id_user = id_user;
         this.last_name = last_name;
         this.first_name = first_name;
         this.email = email;
         this.phone = phone;
-        this.born = born;
-        this.is_active = is_active;
+        this.specialization = specialization;
         this.appointments = appointments;
     }
 
-    public Pacient(String cnp, Long id)
-    {
-        this.CNP = cnp;
-        this.id_user = id;
+    public Doctor(Long id_user, String last_name, String first_name, String email, String phone, Specialization specialization) {
+        this.id_user = id_user;
+        this.last_name = last_name;
+        this.first_name = first_name;
+        this.email = email;
+        this.phone = phone;
+        this.specialization = specialization;
     }
 
-    public Pacient(){}
-
-    public String getCNP() {
-        return CNP;
+    public Long getId_doctor() {
+        return id_doctor;
     }
 
-    public void setCNP(String CNP) {
-        this.CNP = CNP;
+    public void setId_doctor(Long id_doctor) {
+        this.id_doctor = id_doctor;
     }
 
     public Long getId_user() {
@@ -106,20 +101,12 @@ public class Pacient {
         this.phone = phone;
     }
 
-    public Date getBorn() {
-        return born;
+    public Specialization getSpecialization() {
+        return specialization;
     }
 
-    public void setBorn(Date born) {
-        this.born = born;
-    }
-
-    public boolean isIs_active() {
-        return is_active;
-    }
-
-    public void setIs_active(boolean is_active) {
-        this.is_active = is_active;
+    public void setSpecialization(Specialization specialization) {
+        this.specialization = specialization;
     }
 
     public Set<Appointment> getAppointments() {
