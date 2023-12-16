@@ -1,5 +1,8 @@
-package pdp.medical.doctors;
+package medical.pdp.controllers;
 
+import medical.pdp.entities.Doctor;
+import medical.pdp.model_assemblers.DoctorModelAssembler;
+import medical.pdp.repositories.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +20,13 @@ public class DoctorController {
     private DoctorModelAssembler assembler;
 
     @GetMapping("/doctors/{id_doctor}")
-    EntityModel<Doctor> one(@PathVariable Long id_doctor){
+    public EntityModel<Doctor> one(@PathVariable Long id_doctor){
         Doctor doctor = repository.findByIdDoctor(id_doctor);
         return assembler.toModel(doctor);
     }
 
     @GetMapping("/doctors")
-    List<EntityModel<Doctor>> all(){
+    public List<EntityModel<Doctor>> all(){
         return repository.findAll().stream().map(doctor -> assembler.toModel(doctor)).toList();
     }
 }

@@ -1,4 +1,4 @@
-package pdp.medical.DTOs;
+package medical.pdp.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

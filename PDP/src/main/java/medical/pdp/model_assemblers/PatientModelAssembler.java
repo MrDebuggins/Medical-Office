@@ -1,7 +1,9 @@
-package pdp.medical.patients;
+package medical.pdp.model_assemblers;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
+import medical.pdp.entities.Patient;
+import medical.pdp.controllers.PatientController;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;

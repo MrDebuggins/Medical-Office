@@ -1,4 +1,4 @@
-package pdp.medical;
+package medical.pdp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

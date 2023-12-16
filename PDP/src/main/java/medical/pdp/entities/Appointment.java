@@ -1,9 +1,6 @@
-package pdp.medical.DTOs;
+package medical.pdp.entities;
 
 import jakarta.persistence.*;
-import pdp.medical.doctors.Doctor;
-import pdp.medical.patients.Patient;
-import pdp.medical.patients.Status;
 
 @Entity
 @Table(name = "programari")

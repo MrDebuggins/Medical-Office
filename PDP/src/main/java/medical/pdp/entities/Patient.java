@@ -1,7 +1,6 @@
-package pdp.medical.patients;
+package medical.pdp.entities;
 
 import jakarta.persistence.*;
-import pdp.medical.DTOs.Appointment;
 
 import java.sql.Date;
 import java.util.Set;
@@ -36,28 +35,6 @@ public class Patient {
 
     @OneToMany(mappedBy = "patient")
     private Set<Appointment> appointments;
-
-    public Patient(String CNP, Long id, String lastname, String firstname, String email, String phone, Date born, boolean isActive, Set<Appointment> appointments) {
-        this.CNP = CNP;
-        this.idUser = id;
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.email = email;
-        this.phone = phone;
-        this.born = born;
-        this.isActive = isActive;
-        this.appointments = appointments;
-    }
-
-    public Patient(String CNP, Long idUser, String lastname, String firstname, String email, String phone, Date born) {
-        this.CNP = CNP;
-        this.idUser = idUser;
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.email = email;
-        this.phone = phone;
-        this.born = born;
-    }
 
     public Patient(){}
 

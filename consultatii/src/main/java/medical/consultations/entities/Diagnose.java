@@ -1,4 +1,4 @@
-package medical.consultations;
+package medical.consultations.entities;
 
 public enum Diagnose {
     Sanatos,
