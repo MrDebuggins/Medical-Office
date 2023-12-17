@@ -30,8 +30,9 @@ public class Doctor {
     @Column(name = "specializare")
     private Specialization specialization;
 
-    @OneToMany(mappedBy = "doctor")
-    private Set<Appointment> appointments;
+/*    @MapsId("id")
+    @OneToMany(mappedBy = "id_doctor")
+    private Set<Appointment> appointments;*/
 
     public Long getIdDoctor() {
         return idDoctor;
@@ -89,11 +90,11 @@ public class Doctor {
         this.specialization = specialization;
     }
 
-    public Set<Appointment> getAppointments() {
+/*    public Set<Appointment> getAppointments() {
         return appointments;
     }
 
     public void setAppointments(Set<Appointment> appointments) {
         this.appointments = appointments;
-    }
+    }*/
 }

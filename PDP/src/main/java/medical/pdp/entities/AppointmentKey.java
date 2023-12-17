@@ -1,42 +1,38 @@
 package medical.pdp.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 @Embeddable
 public class AppointmentKey implements Serializable {
     @Column(name = "id_pacient")
-    private int id_pacient;
+    private String patient;
 
     @Column(name = "id_doctor")
-    private int id_doctor;
+    private Long doctor;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     @Column(name = "data")
     private Date date;
 
-    public AppointmentKey(int id_pacient, int id_doctor, Date date) {
-        this.id_pacient = id_pacient;
-        this.id_doctor = id_doctor;
-        this.date = date;
+    public String getPatient() {
+        return patient;
     }
 
-    public int getId_pacient() {
-        return id_pacient;
+    public void setPatient(String patient) {
+        this.patient = patient;
     }
 
-    public void setId_pacient(int id_pacient) {
-        this.id_pacient = id_pacient;
+    public Long getDoctor() {
+        return doctor;
     }
 
-    public int getId_doctor() {
-        return id_doctor;
-    }
-
-    public void setId_doctor(int id_doctor) {
-        this.id_doctor = id_doctor;
+    public void setDoctor(Long doctor) {
+        this.doctor = doctor;
     }
 
     public Date getDate() {

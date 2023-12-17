@@ -15,7 +15,7 @@ public class PatientModelAssembler implements RepresentationModelAssembler<Patie
     public EntityModel<Patient> toModel(Patient patient)
     {
         return EntityModel.of(patient,
-                linkTo(methodOn(PatientController.class).oneById(patient.getIdUser())).withSelfRel(),
-                linkTo(methodOn(PatientController.class).all()).withRel("pacients"));
+                linkTo(methodOn(PatientController.class).oneById(patient.getCNP())).withSelfRel(),
+                linkTo(methodOn(PatientController.class).all()).withRel("patients"));
     }
 }

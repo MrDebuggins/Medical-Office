@@ -2,8 +2,8 @@ package medical.pdp.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
-import java.util.Set;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "pacienti")
@@ -27,14 +27,16 @@ public class Patient {
     @Column(name = "telefon")
     private String phone;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "nascut")
     private Date born;
 
     @Column(name = "activ")
     private boolean isActive = true;
 
-    @OneToMany(mappedBy = "patient")
-    private Set<Appointment> appointments;
+/*    @MapsId("id")
+    @OneToMany
+    private Set<Appointment> appointments;*/
 
     public Patient(){}
 
@@ -102,11 +104,11 @@ public class Patient {
         this.isActive = active;
     }
 
-    public Set<Appointment> getAppointments() {
+/*    public Set<Appointment> getAppointments() {
         return appointments;
     }
 
     public void setAppointments(Set<Appointment> appointments) {
         this.appointments = appointments;
-    }
+    }*/
 }
