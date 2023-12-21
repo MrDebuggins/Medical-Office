@@ -16,7 +16,7 @@ public class AppointmentKey implements Serializable {
 
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-    @Column(name = "data")
+    @Column(name = "p_data")
     private Date date;
 
     public String getPatient() {

@@ -18,7 +18,7 @@ public class AppointmentModelAssembler implements RepresentationModelAssembler<A
         Link self = linkTo(methodOn(PatientController.class).getFilteredAppointments(
                 appointment.getId().getPatient(),
                 appointment.getId().getDoctor(),
-                appointment.getId().getDate().toString(),
+                appointment.getId().getDate().toString().substring(0, 16),
                 ""
         )).withSelfRel();
 

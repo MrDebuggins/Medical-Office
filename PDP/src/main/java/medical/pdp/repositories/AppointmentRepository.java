@@ -12,13 +12,11 @@ import java.util.List;
 public interface AppointmentRepository extends JpaRepository<Appointment, String> {
     List<Appointment> findByIdPatient(String idPatient);
 
-    List<Appointment> findByIdPatientAndIdDoctor(String idPatient, Long idDoctor);
+    Appointment findById(AppointmentKey id);
 
     List<Appointment> findById_DateBetween(Date dateStart, Date dateEnd);
 
     List<Appointment> findById_Date(Date date);
 
     void deleteById(AppointmentKey id);
-
-    void deleteByIdPatientAndIdDoctorAndIdDate(String idPatient, Long idDoctor, Date date);
 }

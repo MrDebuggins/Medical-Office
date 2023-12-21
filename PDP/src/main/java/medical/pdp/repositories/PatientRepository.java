@@ -12,6 +12,6 @@ public interface PatientRepository extends JpaRepository<Patient, String>
 
     Patient findByCNP(String cnp);
 
-    @Query(value = "update Medical.pacienti set activ = 0 where id_user = ?1", nativeQuery = true)
-    void setInactive(Long id_user);
+    @Query(value = "update Medical.pacienti set activ = 0 where cnp = ?1", nativeQuery = true)
+    void setInactive(String id);
 }

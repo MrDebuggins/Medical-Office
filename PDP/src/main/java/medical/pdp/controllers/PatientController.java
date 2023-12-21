@@ -11,13 +11,17 @@ import medical.pdp.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
-import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.net.http.HttpResponse;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 @RestController
 public class PatientController
@@ -40,6 +44,17 @@ public class PatientController
         return patientRepository.findAll().stream().map(patient -> patientModelAssembler.toModel(patient)).toList();
     }
 
+    @PutMapping("/patients")
+    @ResponseStatus(HttpStatus.CREATED)
+    public EntityModel<Patient> create(@RequestBody Patient patient)
+    {
+        Patient checkP = patientRepository.findByCNP(patient.getCNP());
+        if(checkP != null)
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Patient already exist");
+
+        return patientModelAssembler.toModel(patientRepository.save(patient));
+    }
+
     @GetMapping("/patients/{id}")
     public EntityModel<Patient> oneById(@PathVariable String id)
     {
@@ -51,20 +66,34 @@ public class PatientController
         }
         else
         {
-            return null; //TODO exception handling
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent user");
         }
     }
 
     @PutMapping("/patients/{id}")
-    public EntityModel<Patient> update(@RequestBody Patient newPatient, @PathVariable Long id)
+    public EntityModel<Patient> update(@RequestBody Patient newPatient, @PathVariable String id)
     {
-        Patient patient = patientRepository.save(newPatient);
-        return patientModelAssembler.toModel(patient);
+        Patient patient = patientRepository.findByCNP(id);
+        if(patient != null)
+        {
+            newPatient.setCNP(id);
+            patient = patientRepository.save(newPatient);
+            return patientModelAssembler.toModel(patient);
+        }
+        else
+        {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent user");
+        }
     }
 
     @DeleteMapping("/patients/{id}")
-    public void delete(@PathVariable Long id)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable String id)
     {
+        Patient patient = patientRepository.findByCNP(id);
+        if(patient == null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent user");
+
         patientRepository.setInactive(id);
     }
 
@@ -88,7 +117,7 @@ public class PatientController
         LocalDate localDate = LocalDate.now();
         Calendar c = Calendar.getInstance();
 
-        List<Appointment> appointments = Collections.emptyList();
+        List<Appointment> appointments = new ArrayList<Appointment>();
         switch (type){
             case "month":
                 c.set(Calendar.MONTH, Integer.parseInt(date) - 1);
@@ -104,21 +133,19 @@ public class PatientController
                 appointments = appointmentRepository.findById_Date(c.getTime());
                 break;
             default:
-                String[] values = date.split("-");
-                int v0 = Integer.parseInt(values[0]);
-                int v1 = Integer.parseInt(values[1]);
-                int v2 = Integer.parseInt(values[2]);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
 
-                if(values[0].length() <= 2)
-                {
-                    c.set(v2, v1 - 1, v0);
-                }
-                else
-                {
-                    c.set(v0,v1 - 1, v2);
-                }
+                AppointmentKey id = new AppointmentKey();
+                id.setPatient(id_patient);
+                id.setDoctor(id_doctor);
+                id.setDate(Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant()));
 
-                appointments = appointmentRepository.findById_Date(c.getTime());
+                Appointment appointment = appointmentRepository.findById(id);
+                if(appointment != null)
+                {
+                    appointments.add(appointment);
+                }
 
                 break;
         }
@@ -140,6 +167,7 @@ public class PatientController
     }
 
     @Transactional
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/patients/{id_patient}/physicians/{id_doctor}")
     void delete(
             @PathVariable String id_patient,
@@ -151,6 +179,15 @@ public class PatientController
         id.setDoctor(id_doctor);
         id.setDate(date);
 
-        appointmentRepository.deleteById(id);
+        Appointment appointment = appointmentRepository.findById(id);
+        Calendar c = Calendar.getInstance();
+        if(appointment != null)
+        {
+            appointmentRepository.deleteById(id);
+        }
+        else
+        {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent appointment");
+        }
     }
 }
