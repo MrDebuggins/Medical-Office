@@ -156,12 +156,23 @@ public class PatientController
                 .toList();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("/patients/{id_patient}/physicians")
     EntityModel<Appointment> createOrUpdate(
             @PathVariable String id_patient,
             @RequestBody Appointment appointment)
     {
         appointment.getId().setPatient(id_patient);
+
+        AppointmentKey id = new AppointmentKey();
+        id.setPatient(appointment.getId().getPatient());
+        id.setDoctor(appointment.getId().getDoctor());
+        id.setDate(appointment.getId().getDate());
+
+        Appointment check = appointmentRepository.findById(id);
+        if(check != null)
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You cannot update an appointment");
+
         appointment = appointmentRepository.save(appointment);
         return appointmentModelAssembler.toModel(appointment);
     }

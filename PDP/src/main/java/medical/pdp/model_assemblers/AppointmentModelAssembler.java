@@ -1,5 +1,6 @@
 package medical.pdp.model_assemblers;
 
+import medical.pdp.controllers.DoctorController;
 import medical.pdp.controllers.PatientController;
 import medical.pdp.entities.Appointment;
 import org.springframework.hateoas.EntityModel;
@@ -15,7 +16,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class AppointmentModelAssembler implements RepresentationModelAssembler<Appointment, EntityModel<Appointment>> {
     @Override
     public EntityModel<Appointment> toModel(Appointment appointment){
-        Link self = linkTo(methodOn(PatientController.class).getFilteredAppointments(
+        Link self = linkTo(methodOn(DoctorController.class).getFilteredAppointments(
                 appointment.getId().getPatient(),
                 appointment.getId().getDoctor(),
                 appointment.getId().getDate().toString().substring(0, 16),

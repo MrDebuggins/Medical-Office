@@ -2,7 +2,9 @@ package medical.pdp.model_assemblers;
 
 import medical.pdp.entities.Doctor;
 import medical.pdp.controllers.DoctorController;
+import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +16,6 @@ public class DoctorModelAssembler implements RepresentationModelAssembler<Doctor
     public EntityModel<Doctor> toModel(Doctor doctor) {
         return EntityModel.of(doctor,
                 linkTo(methodOn(DoctorController.class).one(doctor.getIdDoctor())).withSelfRel(),
-                linkTo(methodOn(DoctorController.class).all()).withRel("doctors"));
+                linkTo(methodOn(DoctorController.class).paged(null, null, 0, 0)).withRel("doctors"));
     }
 }
