@@ -5,21 +5,27 @@ package model;
 option java_package = "medical.main.proto";
 
 service IdentityManagementService{
-    rpc Authorize(Account) returns (IdentityResponse) {}
-    rpc Validate(Token) returns (IdentityResponse) {}
+    rpc Authorize(Account) returns (Token) {};
+    rpc Register(Account) returns (Token) {};
+    rpc Validate(Token) returns (IdentityResponse) {};
+    rpc Invalidate(Token) returns (InvalidationResponse);
 }
 
 message Account{
     string login = 1;
     string password = 2;
+    uint32 role = 3;
 }
 
 message IdentityResponse{
     int64 id = 1;
     uint32 role = 2;
-    string token = 3;
 }
 
 message Token{
     string token = 1;
+}
+
+message InvalidationResponse{
+    bool success = 1;
 }

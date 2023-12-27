@@ -6,7 +6,6 @@ import medical.pdp.entities.Appointment;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
-import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Component;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
@@ -23,7 +22,7 @@ public class AppointmentModelAssembler implements RepresentationModelAssembler<A
                 ""
         )).withSelfRel();
 
-        Link parent = linkTo(methodOn(PatientController.class).getAllAppointments(appointment.getId().getPatient())).withRel("physicians");
+        Link parent = linkTo(methodOn(PatientController.class).getAllAppointments(appointment.getId().getPatient())).withRel("parent");
 
         return EntityModel.of(appointment, self, parent);
     }

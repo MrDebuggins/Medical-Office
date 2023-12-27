@@ -1,23 +1,37 @@
 package medical.consultations.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.EnumNaming;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 import java.util.List;
 
-@Document("appointments")
+@Document("consultations")
 public class Consultation {
     @Id
     private String id;
 
-    private Long idPatient;
+    private String idPatient;
 
     private Long idDoctor;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "Europe/Bucharest")
     private Date date;
 
-    private List<Investigations> investigations;
+    public Diagnose getDiagnose() {
+        return diagnose;
+    }
+
+    public void setDiagnose(Diagnose diagnose) {
+        this.diagnose = diagnose;
+    }
+
+    private Diagnose diagnose;
+
+    private List<Investigation> investigations;
 
     public String getId() {
         return id;
@@ -27,11 +41,11 @@ public class Consultation {
         this.id = id;
     }
 
-    public Long getIdPatient() {
+    public String getIdPatient() {
         return idPatient;
     }
 
-    public void setIdPatient(Long idPatient) {
+    public void setIdPatient(String idPatient) {
         this.idPatient = idPatient;
     }
 
@@ -47,16 +61,17 @@ public class Consultation {
         return date;
     }
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     public void setDate(Date date) {
         this.date = date;
     }
 
 
-    public List<Investigations> getInvestigations() {
+    public List<Investigation> getInvestigations() {
         return investigations;
     }
 
-    public void setInvestigations(List<Investigations> investigations) {
+    public void setInvestigations(List<Investigation> investigations) {
         this.investigations = investigations;
     }
 }

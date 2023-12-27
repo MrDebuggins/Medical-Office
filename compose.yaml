@@ -1,0 +1,82 @@
+services:
+  mariadb-medical:
+    image: mariadb:latest
+    ports:
+      - "3306"
+    volumes:
+      - ./sql/doctori.sql:/docker-entrypoint-initdb.d/doctori.sql
+      - ./sql/pacienti.sql:/docker-entrypoint-initdb.d/pacienti.sql
+      - ./sql/programari.sql:/docker-entrypoint-initdb.d/programari.sql
+    environment:
+      MARIADB_USER: apidev
+      MARIADB_ROOT_PASSWORD: apidev
+      MARIADB_DATABASE: Medical
+      TZ: Europe/Bucharest
+    networks:
+      - pdp_net
+
+  mariadb-idm:
+    image: mariadb:latest
+    ports:
+      - "3306"
+    volumes:
+      - ./sql/users.sql:/docker-entrypoint-initdb.d/users.sql
+    environment:
+      MARIADB_ROOT_PASSWORD: idmdev
+      MARIADB_USER: idmdev
+      MARIADB_DATABASE: User
+    networks:
+      - idm_net
+
+  mongodb-medical:
+    image: mongo:latest
+    ports:
+      - "27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: apidev
+      MONGO_INITDB_DATABASE: Medical
+    networks:
+      - consultations_net
+
+  redis_idm:
+    image: redis:latest
+    ports:
+      - "6379"
+    networks:
+      - idm_net
+
+  pdp:
+    image: amazoncorretto:17
+    restart: on-failure
+    depends_on:
+      - mariadb-medical
+    volumes:
+      - ./PDP/target:/usr/src/app
+    command: bash -c "cd /usr/src/app && java -jar PDP-1.0-SNAPSHOT.jar"
+    ports:
+      - "50100"
+    networks:
+      - pdp_net
+      - gateway_net
+
+  idm:
+    image: amazoncorretto:17
+    restart: always
+    depends_on:
+      - mariadb-idm
+      - redis_idm
+    volumes:
+      - ./IDM/target:/usr/src/app
+    command: bash -c "cd /usr/src/app && java -jar IDM-1.0-SNAPSHOT.jar"
+    ports:
+      - "50200"
+    networks:
+      - idm_net
+      - gateway_net
+
+networks:
+  idm_net:
+  pdp_net:
+  consultations_net:
+  gateway_net:

@@ -1,18 +1,11 @@
-package medical.main.proto;
+package medical.idm.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -27,30 +20,30 @@ public final class IdentityManagementServiceGrpc {
   public static final String SERVICE_NAME = "model.IdentityManagementService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<medical.main.proto.Main.Account,
-      medical.main.proto.Main.IdentityResponse> getAuthorizeMethod;
+  private static volatile io.grpc.MethodDescriptor<medical.idm.proto.Main.Account,
+      medical.idm.proto.Main.Token> getAuthorizeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Authorize",
-      requestType = medical.main.proto.Main.Account.class,
-      responseType = medical.main.proto.Main.IdentityResponse.class,
+      requestType = medical.idm.proto.Main.Account.class,
+      responseType = medical.idm.proto.Main.Token.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<medical.main.proto.Main.Account,
-      medical.main.proto.Main.IdentityResponse> getAuthorizeMethod() {
-    io.grpc.MethodDescriptor<medical.main.proto.Main.Account, medical.main.proto.Main.IdentityResponse> getAuthorizeMethod;
+  public static io.grpc.MethodDescriptor<medical.idm.proto.Main.Account,
+      medical.idm.proto.Main.Token> getAuthorizeMethod() {
+    io.grpc.MethodDescriptor<medical.idm.proto.Main.Account, medical.idm.proto.Main.Token> getAuthorizeMethod;
     if ((getAuthorizeMethod = IdentityManagementServiceGrpc.getAuthorizeMethod) == null) {
       synchronized (IdentityManagementServiceGrpc.class) {
         if ((getAuthorizeMethod = IdentityManagementServiceGrpc.getAuthorizeMethod) == null) {
           IdentityManagementServiceGrpc.getAuthorizeMethod = getAuthorizeMethod = 
-              io.grpc.MethodDescriptor.<medical.main.proto.Main.Account, medical.main.proto.Main.IdentityResponse>newBuilder()
+              io.grpc.MethodDescriptor.<medical.idm.proto.Main.Account, medical.idm.proto.Main.Token>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "model.IdentityManagementService", "Authorize"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  medical.main.proto.Main.Account.getDefaultInstance()))
+                  medical.idm.proto.Main.Account.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  medical.main.proto.Main.IdentityResponse.getDefaultInstance()))
+                  medical.idm.proto.Main.Token.getDefaultInstance()))
                   .setSchemaDescriptor(new IdentityManagementServiceMethodDescriptorSupplier("Authorize"))
                   .build();
           }
@@ -59,36 +52,100 @@ public final class IdentityManagementServiceGrpc {
      return getAuthorizeMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<medical.main.proto.Main.Token,
-      medical.main.proto.Main.IdentityResponse> getValidateMethod;
+  private static volatile io.grpc.MethodDescriptor<medical.idm.proto.Main.Account,
+      medical.idm.proto.Main.Token> getRegisterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Register",
+      requestType = medical.idm.proto.Main.Account.class,
+      responseType = medical.idm.proto.Main.Token.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<medical.idm.proto.Main.Account,
+      medical.idm.proto.Main.Token> getRegisterMethod() {
+    io.grpc.MethodDescriptor<medical.idm.proto.Main.Account, medical.idm.proto.Main.Token> getRegisterMethod;
+    if ((getRegisterMethod = IdentityManagementServiceGrpc.getRegisterMethod) == null) {
+      synchronized (IdentityManagementServiceGrpc.class) {
+        if ((getRegisterMethod = IdentityManagementServiceGrpc.getRegisterMethod) == null) {
+          IdentityManagementServiceGrpc.getRegisterMethod = getRegisterMethod = 
+              io.grpc.MethodDescriptor.<medical.idm.proto.Main.Account, medical.idm.proto.Main.Token>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "model.IdentityManagementService", "Register"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  medical.idm.proto.Main.Account.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  medical.idm.proto.Main.Token.getDefaultInstance()))
+                  .setSchemaDescriptor(new IdentityManagementServiceMethodDescriptorSupplier("Register"))
+                  .build();
+          }
+        }
+     }
+     return getRegisterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<medical.idm.proto.Main.Token,
+      medical.idm.proto.Main.IdentityResponse> getValidateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Validate",
-      requestType = medical.main.proto.Main.Token.class,
-      responseType = medical.main.proto.Main.IdentityResponse.class,
+      requestType = medical.idm.proto.Main.Token.class,
+      responseType = medical.idm.proto.Main.IdentityResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<medical.main.proto.Main.Token,
-      medical.main.proto.Main.IdentityResponse> getValidateMethod() {
-    io.grpc.MethodDescriptor<medical.main.proto.Main.Token, medical.main.proto.Main.IdentityResponse> getValidateMethod;
+  public static io.grpc.MethodDescriptor<medical.idm.proto.Main.Token,
+      medical.idm.proto.Main.IdentityResponse> getValidateMethod() {
+    io.grpc.MethodDescriptor<medical.idm.proto.Main.Token, medical.idm.proto.Main.IdentityResponse> getValidateMethod;
     if ((getValidateMethod = IdentityManagementServiceGrpc.getValidateMethod) == null) {
       synchronized (IdentityManagementServiceGrpc.class) {
         if ((getValidateMethod = IdentityManagementServiceGrpc.getValidateMethod) == null) {
           IdentityManagementServiceGrpc.getValidateMethod = getValidateMethod = 
-              io.grpc.MethodDescriptor.<medical.main.proto.Main.Token, medical.main.proto.Main.IdentityResponse>newBuilder()
+              io.grpc.MethodDescriptor.<medical.idm.proto.Main.Token, medical.idm.proto.Main.IdentityResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "model.IdentityManagementService", "Validate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  medical.main.proto.Main.Token.getDefaultInstance()))
+                  medical.idm.proto.Main.Token.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  medical.main.proto.Main.IdentityResponse.getDefaultInstance()))
+                  medical.idm.proto.Main.IdentityResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new IdentityManagementServiceMethodDescriptorSupplier("Validate"))
                   .build();
           }
         }
      }
      return getValidateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<medical.idm.proto.Main.Token,
+      medical.idm.proto.Main.InvalidationResponse> getInvalidateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Invalidate",
+      requestType = medical.idm.proto.Main.Token.class,
+      responseType = medical.idm.proto.Main.InvalidationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<medical.idm.proto.Main.Token,
+      medical.idm.proto.Main.InvalidationResponse> getInvalidateMethod() {
+    io.grpc.MethodDescriptor<medical.idm.proto.Main.Token, medical.idm.proto.Main.InvalidationResponse> getInvalidateMethod;
+    if ((getInvalidateMethod = IdentityManagementServiceGrpc.getInvalidateMethod) == null) {
+      synchronized (IdentityManagementServiceGrpc.class) {
+        if ((getInvalidateMethod = IdentityManagementServiceGrpc.getInvalidateMethod) == null) {
+          IdentityManagementServiceGrpc.getInvalidateMethod = getInvalidateMethod = 
+              io.grpc.MethodDescriptor.<medical.idm.proto.Main.Token, medical.idm.proto.Main.InvalidationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "model.IdentityManagementService", "Invalidate"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  medical.idm.proto.Main.Token.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  medical.idm.proto.Main.InvalidationResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new IdentityManagementServiceMethodDescriptorSupplier("Invalidate"))
+                  .build();
+          }
+        }
+     }
+     return getInvalidateMethod;
   }
 
   /**
@@ -120,16 +177,30 @@ public final class IdentityManagementServiceGrpc {
 
     /**
      */
-    public void authorize(medical.main.proto.Main.Account request,
-        io.grpc.stub.StreamObserver<medical.main.proto.Main.IdentityResponse> responseObserver) {
+    public void authorize(medical.idm.proto.Main.Account request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.Token> responseObserver) {
       asyncUnimplementedUnaryCall(getAuthorizeMethod(), responseObserver);
     }
 
     /**
      */
-    public void validate(medical.main.proto.Main.Token request,
-        io.grpc.stub.StreamObserver<medical.main.proto.Main.IdentityResponse> responseObserver) {
+    public void register(medical.idm.proto.Main.Account request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.Token> responseObserver) {
+      asyncUnimplementedUnaryCall(getRegisterMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void validate(medical.idm.proto.Main.Token request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.IdentityResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getValidateMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void invalidate(medical.idm.proto.Main.Token request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.InvalidationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getInvalidateMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -138,16 +209,30 @@ public final class IdentityManagementServiceGrpc {
             getAuthorizeMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                medical.main.proto.Main.Account,
-                medical.main.proto.Main.IdentityResponse>(
+                medical.idm.proto.Main.Account,
+                medical.idm.proto.Main.Token>(
                   this, METHODID_AUTHORIZE)))
+          .addMethod(
+            getRegisterMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                medical.idm.proto.Main.Account,
+                medical.idm.proto.Main.Token>(
+                  this, METHODID_REGISTER)))
           .addMethod(
             getValidateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                medical.main.proto.Main.Token,
-                medical.main.proto.Main.IdentityResponse>(
+                medical.idm.proto.Main.Token,
+                medical.idm.proto.Main.IdentityResponse>(
                   this, METHODID_VALIDATE)))
+          .addMethod(
+            getInvalidateMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                medical.idm.proto.Main.Token,
+                medical.idm.proto.Main.InvalidationResponse>(
+                  this, METHODID_INVALIDATE)))
           .build();
     }
   }
@@ -172,18 +257,34 @@ public final class IdentityManagementServiceGrpc {
 
     /**
      */
-    public void authorize(medical.main.proto.Main.Account request,
-        io.grpc.stub.StreamObserver<medical.main.proto.Main.IdentityResponse> responseObserver) {
+    public void authorize(medical.idm.proto.Main.Account request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.Token> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getAuthorizeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void validate(medical.main.proto.Main.Token request,
-        io.grpc.stub.StreamObserver<medical.main.proto.Main.IdentityResponse> responseObserver) {
+    public void register(medical.idm.proto.Main.Account request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.Token> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getRegisterMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void validate(medical.idm.proto.Main.Token request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.IdentityResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getValidateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void invalidate(medical.idm.proto.Main.Token request,
+        io.grpc.stub.StreamObserver<medical.idm.proto.Main.InvalidationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getInvalidateMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -207,16 +308,30 @@ public final class IdentityManagementServiceGrpc {
 
     /**
      */
-    public medical.main.proto.Main.IdentityResponse authorize(medical.main.proto.Main.Account request) {
+    public medical.idm.proto.Main.Token authorize(medical.idm.proto.Main.Account request) {
       return blockingUnaryCall(
           getChannel(), getAuthorizeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public medical.main.proto.Main.IdentityResponse validate(medical.main.proto.Main.Token request) {
+    public medical.idm.proto.Main.Token register(medical.idm.proto.Main.Account request) {
+      return blockingUnaryCall(
+          getChannel(), getRegisterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public medical.idm.proto.Main.IdentityResponse validate(medical.idm.proto.Main.Token request) {
       return blockingUnaryCall(
           getChannel(), getValidateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public medical.idm.proto.Main.InvalidationResponse invalidate(medical.idm.proto.Main.Token request) {
+      return blockingUnaryCall(
+          getChannel(), getInvalidateMethod(), getCallOptions(), request);
     }
   }
 
@@ -240,23 +355,41 @@ public final class IdentityManagementServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<medical.main.proto.Main.IdentityResponse> authorize(
-        medical.main.proto.Main.Account request) {
+    public com.google.common.util.concurrent.ListenableFuture<medical.idm.proto.Main.Token> authorize(
+        medical.idm.proto.Main.Account request) {
       return futureUnaryCall(
           getChannel().newCall(getAuthorizeMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<medical.main.proto.Main.IdentityResponse> validate(
-        medical.main.proto.Main.Token request) {
+    public com.google.common.util.concurrent.ListenableFuture<medical.idm.proto.Main.Token> register(
+        medical.idm.proto.Main.Account request) {
+      return futureUnaryCall(
+          getChannel().newCall(getRegisterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<medical.idm.proto.Main.IdentityResponse> validate(
+        medical.idm.proto.Main.Token request) {
       return futureUnaryCall(
           getChannel().newCall(getValidateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<medical.idm.proto.Main.InvalidationResponse> invalidate(
+        medical.idm.proto.Main.Token request) {
+      return futureUnaryCall(
+          getChannel().newCall(getInvalidateMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_AUTHORIZE = 0;
-  private static final int METHODID_VALIDATE = 1;
+  private static final int METHODID_REGISTER = 1;
+  private static final int METHODID_VALIDATE = 2;
+  private static final int METHODID_INVALIDATE = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -276,12 +409,20 @@ public final class IdentityManagementServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_AUTHORIZE:
-          serviceImpl.authorize((medical.main.proto.Main.Account) request,
-              (io.grpc.stub.StreamObserver<medical.main.proto.Main.IdentityResponse>) responseObserver);
+          serviceImpl.authorize((medical.idm.proto.Main.Account) request,
+              (io.grpc.stub.StreamObserver<medical.idm.proto.Main.Token>) responseObserver);
+          break;
+        case METHODID_REGISTER:
+          serviceImpl.register((medical.idm.proto.Main.Account) request,
+              (io.grpc.stub.StreamObserver<medical.idm.proto.Main.Token>) responseObserver);
           break;
         case METHODID_VALIDATE:
-          serviceImpl.validate((medical.main.proto.Main.Token) request,
-              (io.grpc.stub.StreamObserver<medical.main.proto.Main.IdentityResponse>) responseObserver);
+          serviceImpl.validate((medical.idm.proto.Main.Token) request,
+              (io.grpc.stub.StreamObserver<medical.idm.proto.Main.IdentityResponse>) responseObserver);
+          break;
+        case METHODID_INVALIDATE:
+          serviceImpl.invalidate((medical.idm.proto.Main.Token) request,
+              (io.grpc.stub.StreamObserver<medical.idm.proto.Main.InvalidationResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -305,7 +446,7 @@ public final class IdentityManagementServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return medical.main.proto.Main.getDescriptor();
+      return medical.idm.proto.Main.getDescriptor();
     }
 
     @java.lang.Override
@@ -345,7 +486,9 @@ public final class IdentityManagementServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new IdentityManagementServiceFileDescriptorSupplier())
               .addMethod(getAuthorizeMethod())
+              .addMethod(getRegisterMethod())
               .addMethod(getValidateMethod())
+              .addMethod(getInvalidateMethod())
               .build();
         }
       }

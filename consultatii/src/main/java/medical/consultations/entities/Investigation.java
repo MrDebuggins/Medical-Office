@@ -1,12 +1,13 @@
 package medical.consultations.entities;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Investigations {
+public class Investigation {
     @Id
-    private String id;
+    private String id = new ObjectId().toHexString();
 
     private String name;
 
