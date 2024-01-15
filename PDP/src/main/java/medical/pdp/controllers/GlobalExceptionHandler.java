@@ -12,7 +12,7 @@ import java.sql.SQLTransientConnectionException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     @ExceptionHandler(SQLTransientConnectionException.class)
     public void sqlTrigger() {}
 

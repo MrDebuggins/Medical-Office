@@ -27,7 +27,7 @@ public class IDMServer {
     private Server server;
 
     private void start() throws IOException {
-        int port = 50051;
+        int port = 50200;
 
         IdentityManagementService service;
         try {
@@ -76,8 +76,33 @@ public class IDMServer {
         private static String dbUrl = "jdbc:mariadb://mariadb-idm:3306/User";
         private static String user = "root";
         private static String password = "idmdev";
-        private static Algorithm algorithm = Algorithm.HMAC256("ksdgfadsngkjsdngadgujbrujruj");
-        private static JedisPool pool = new JedisPool("redis-idm", 6379);
+        private static Algorithm algorithm = Algorithm.HMAC256("" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠲⡑⢄⠀⠀⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢮⣣⡀⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠱⡀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡤⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣹⠀\n" +
+                "⠀⠀⠀⠀⢀⣀⣀⣸⢧⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⣩⡤⠶⠶⠶⠦⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⡇\n" +
+                "⠀⠀⠀⣰⣫⡏⠳⣏⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⠁⠀⠀⠀⠀⠀⠀⠙⢿⣿⣶⣄⡀⠀⠀⢀⡀⠀⠀⠀⠀⠀⡀⡅⡇\n" +
+                "⠀⠀⢰⡇⣾⡇⠀⠙⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣴⣶⠿⠛⠻⢿⣶⣤⣍⡙⢿⣿⣷⣤⣾⡇⣼⣆⣴⣷⣿⣿⡇⡇\n" +
+                "⠀⠀⢸⡀⡿⠁⠀⡇⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣯⠴⢲⣶⣶⣶⣾⣿⣿⣿⣷⠹⣿⣿⠟⢰⣿⣿⣿⠿⣿⣿⣿⠁\n" +
+                "⠀⠀⠈⡇⢷⣾⣿⡿⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠹⣌⠳⣼⣿⣿⣿⣻⣿⣿⣿⣿⡇⠈⠁⢰⣿⣿⣿⣿⣶⣾⣿⣿⠀\n" +
+                "⠀⠀⠀⣷⠘⠿⣿⡥⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⠌⠉⣿⣿⣿⣿⣿⣿⠟⠃⠀⢀⡿⣿⣿⣿⣿⣿⣿⣿⡞⠀\n" +
+                "⠀⠀⠀⢸⡇⠀⠹⠗⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡿⠟⠉⠉⠀⠀⠀⠈⢃⣿⣿⣿⣿⣿⣿⡻⠀⠀\n" +
+                "⠀⠀⠀⠈⢧⠀⠀⠏⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⠁⠀⠀\n" +
+                "⠀⠀⠀⠀⠈⢳⠶⠞⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠆⠀⠀⠊⠁⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⣼⣿⣀⡰⠀⠀⣤⣄⠀⠀⠀⠀⢹⣿⣿⣿⣿⢻⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠹⣿⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠙⣿⣿⣿⡏⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣄⢠⣤⣶⣤⣀⠀⢀⣶⣶⣶⣿⣿⠟⠀⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠖⠁⠀⠀⠀⠀⠀⠻⣿⣿⣥⣤⣯⣥⣾⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⣰⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⠁⠀⠀⠀⠠⠀⠀⠀⠀⠈⣿⣿⣼⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀\n" +
+                "⠀⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠊⠀⠀⠀⣠⣰⣄⡀⠀⢀⣀⣀⣛⣟⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀\n" +
+                "⠀⣠⠜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⠾⠛⠛⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀\n" +
+                "⠾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡟⠀⠀⠀⠀⠠⣄⣉⣉⣻⣿⣿⣿⣿⣿⣿⡟⠧⢄⡀⠀⠀⠀⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠅⠀⠀⠀⠀⠘⠉⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠉⠓⠢⣄⠀⠀⠀\n" +
+                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣉⣿⣿⣿⣿⣿⣿⣿⣿⣷⣻⡄⠀⠀⢀⡑⠢⠄");
+        private static JedisPool pool = new JedisPool("redis_idm", 6379);
 
         Connection connection = DriverManager.getConnection(dbUrl, user, password);
 
@@ -107,11 +132,15 @@ public class IDMServer {
                 }
                 else
                 {
-                    throw Status.NOT_FOUND.asRuntimeException();
+                    responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
+                    responseObserver.onCompleted();
+                    return;
                 }
             }catch (SQLException e)
             {
-                throw Status.NOT_FOUND.asRuntimeException();
+                responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
+                responseObserver.onCompleted();
+                return;
             }
 
             responseObserver.onNext(token);
@@ -119,54 +148,53 @@ public class IDMServer {
         }
 
         @Override
-        public void register(Main.Account req, StreamObserver<Main.Token> responseObserver)
+        public void register(Main.Account req, StreamObserver<Main.IdentityResponse> responseObserver)
         {
-            Main.Token token;
+            Main.IdentityResponse response;
 
             try {
                 User user = dbGetUserByLogin(req.getLogin());
 
                 if(user != null)
                 {
-                    throw Status.ALREADY_EXISTS.asRuntimeException();
+                    responseObserver.onError(Status.ALREADY_EXISTS.asRuntimeException());
+                    responseObserver.onCompleted();
+                    return;
                 }
-                else
+                String insertQ = "insert into Users (login,password,role) values(?,?,?);";
+                PreparedStatement insert = connection.prepareStatement(insertQ);
+                insert.setString(1, req.getLogin());
+                insert.setString(2, req.getPassword());
+                insert.setInt(3, req.getRole());
+
+                if(insert.executeUpdate() == 0)
                 {
-                    String insertQ = "insert into Users (login,password,role) values(?,?,?);";
-                    PreparedStatement insert = connection.prepareStatement(insertQ);
-                    insert.setString(1, req.getLogin());
-                    insert.setString(2, req.getPassword());
-                    insert.setInt(2, req.getRole());
-
-                    if(insert.executeUpdate() == 0)
-                    {
-                        throw Status.CANCELLED.asRuntimeException();
-                    }
-
-                    user = dbGetUserByLogin(req.getLogin());
-                    if(user != null)
-                    {
-                        String jwt = JWT.create()
-                                .withIssuer("medical_office")
-                                .withSubject(user.getId().toString())
-                                .withExpiresAt(new Date(System.currentTimeMillis() + 3600000))
-                                .withJWTId(UUID.randomUUID().toString())
-                                .withClaim("role", user.getRole())
-                                .sign(algorithm);
-
-                        token = Main.Token.newBuilder().setToken(jwt).build();
-                    }
-                    else
-                    {
-                        throw Status.CANCELLED.asRuntimeException();
-                    }
+                    responseObserver.onError(Status.CANCELLED.asRuntimeException());
+                    responseObserver.onCompleted();
+                    return;
                 }
+
+                user = dbGetUserByLogin(req.getLogin());
+                if(user == null)
+                {
+                    responseObserver.onError(Status.CANCELLED.asRuntimeException());
+                    responseObserver.onCompleted();
+                    return;
+                }
+
+                response = Main.IdentityResponse
+                        .newBuilder()
+                        .setId(user.getId())
+                        .setRole(user.getRole())
+                        .build();
             }catch (SQLException e)
             {
-                throw Status.NOT_FOUND.asRuntimeException();
+                responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
+                responseObserver.onCompleted();
+                return;
             }
 
-            responseObserver.onNext(token);
+            responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
 

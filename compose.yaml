@@ -75,6 +75,19 @@ services:
       - idm_net
       - gateway_net
 
+  gateway:
+    image: amazoncorretto:17
+    restart: always
+    depends_on:
+      - idm
+    volumes:
+      - ./gateway/target:/usr/src/app
+    command: bash -c "cd /usr/src/app && java -jar gateway-1.0-SNAPSHOT.jar"
+    ports:
+      - "8080:8080"
+    networks:
+      - gateway_net
+
 networks:
   idm_net:
   pdp_net:
