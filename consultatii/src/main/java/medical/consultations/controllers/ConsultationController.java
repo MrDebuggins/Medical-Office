@@ -38,7 +38,7 @@ public class ConsultationController {
     @Autowired
     MongoOperations template;
 
-    @GetMapping("/patients/{id_patient}/physicians/{id_doctor}/{date}/consultation")
+    @GetMapping("/patients/{id_patient}/physicians/{id_doctor}/{date}/consultation/")
     public EntityModel<Consultation> getOne(
             @PathVariable String id_patient,
             @PathVariable Long id_doctor,
@@ -52,7 +52,7 @@ public class ConsultationController {
         return consultationModelAssembler.toModel(consultation);
     }
 
-    @PutMapping("/patients/{id_patient}/physicians/{id_doctor}/{date}/consultation")
+    @PutMapping("/patients/{id_patient}/physicians/{id_doctor}/{date}/consultation/")
     public ResponseEntity<EntityModel<Consultation>> create(
             @PathVariable String id_patient,
             @PathVariable Long id_doctor,

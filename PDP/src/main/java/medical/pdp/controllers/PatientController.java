@@ -38,13 +38,13 @@ public class PatientController
     @Autowired
     private AppointmentModelAssembler appointmentModelAssembler;
 
-    @GetMapping("/patients")
+    @GetMapping("/patients/")
     public List<EntityModel<Patient>> all()
     {
         return patientRepository.findAll().stream().map(patient -> patientModelAssembler.toModel(patient)).toList();
     }
 
-    @PutMapping("/patients")
+    @PostMapping("/patients/")
     @ResponseStatus(HttpStatus.CREATED)
     public EntityModel<Patient> create(@RequestBody Patient patient)
     {

@@ -4,11 +4,14 @@ package model;
 
 option java_package = "medical.main.proto";
 
+import "google/protobuf/empty.proto";
+
 service IdentityManagementService{
     rpc Authorize(Account) returns (Token) {};
     rpc Register(Account) returns (IdentityResponse) {};
     rpc Validate(Token) returns (IdentityResponse) {};
-    rpc Invalidate(Token) returns (InvalidationResponse);
+    rpc Invalidate(Token) returns (google.protobuf.Empty);
+    rpc DeleteUser(Account) returns (google.protobuf.Empty);
 }
 
 message Account{
@@ -24,8 +27,4 @@ message IdentityResponse{
 
 message Token{
     string token = 1;
-}
-
-message InvalidationResponse{
-    bool success = 1;
 }

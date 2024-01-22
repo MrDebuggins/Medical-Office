@@ -21,11 +21,9 @@ public class RouteLocatorConfig
     public RouterFunction<ServerResponse> validateLOL()
     {
         return route()
-                .add(route(RequestPredicates.path("/api1"), http(URI.create(""))).filter(validateAccess("/smf", "bubn")))
-                .add(route(RequestPredicates.path("/api2"), http(URI.create(""))).filter(validateAccess2("/smf", "bubn")))
+                .add(route(RequestPredicates.path("/api/medical_office/patients/*/*/*/*/consultation/**"), http(URI.create("http://localhost:8083"))).filter(validateAccess()))
+                .add(route(RequestPredicates.path("/api/medical_office/patients/**"), http(URI.create("http://localhost:8080"))).filter(validateAccess()))
+                .add(route(RequestPredicates.path("/api/medical_office/doctors/**"), http(URI.create("http://localhost:8080"))).filter(validateAccess()))
                 .build();
-        /*return route().route(RequestPredicates.path("/api1"), http(URI.create("")))
-                .filter(validateAccess("/smf", "bubn"))
-                .build();*/
     }
 }

@@ -55,7 +55,7 @@ public class DoctorController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PutMapping("/physicians")
+    @PostMapping("/physicians/")
     public EntityModel<Doctor> create(@RequestBody Doctor doctor)
     {
         Doctor checkD = doctorRepository.findByIdDoctor(doctor.getIdDoctor());
@@ -76,7 +76,7 @@ public class DoctorController {
         return doctorModelAssembler.toModel(doctorRepository.save(doctor));
     }
 
-    @GetMapping("/physicians")
+    @GetMapping("/physicians/")
     public PagedModel<EntityModel<Doctor>> paged(
             @RequestParam(required = false, name = "specialization") Specialization s,
             @RequestParam(required = false, name = "name") String name,

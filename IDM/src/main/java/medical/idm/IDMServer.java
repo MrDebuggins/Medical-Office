@@ -5,6 +5,7 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.google.protobuf.Empty;
 import io.grpc.Grpc;
 import io.grpc.Server;
 import io.grpc.InsecureServerCredentials;
@@ -241,7 +242,7 @@ public class IDMServer {
         }
 
         @Override
-        public void invalidate(Main.Token req, StreamObserver<Main.InvalidationResponse> responseObserver)
+        public void invalidate(Main.Token req, StreamObserver<Empty> responseObserver)
         {
             try {
                 DecodedJWT decodedJWT;
@@ -255,14 +256,31 @@ public class IDMServer {
                 Jedis jedis = pool.getResource();
                 jedis.sadd(id.toString(), req.getToken());
 
-                Main.InvalidationResponse resp = Main.InvalidationResponse.newBuilder().setSuccess(true).build();
-                responseObserver.onNext(resp);
+                responseObserver.onNext(Empty.getDefaultInstance());
                 responseObserver.onCompleted();
             }catch (Exception e)
             {
                 throw Status.INTERNAL.asRuntimeException();
             }
 
+        }
+
+        @Override
+        public void deleteUser(Main.Account req, StreamObserver<Empty> responseObserver)
+        {
+            try
+            {
+                String deleteQ = "delete from Users where id=?;";
+                PreparedStatement statement = connection.prepareStatement(deleteQ);
+                statement.setLong(1, req.getRole());
+                statement.execute();
+            }
+            catch (Exception ex)
+            {
+                throw Status.INTERNAL.asRuntimeException();
+            }
+
+            responseObserver.onCompleted();
         }
 
         private User dbGetUserByLogin(String login) throws SQLException

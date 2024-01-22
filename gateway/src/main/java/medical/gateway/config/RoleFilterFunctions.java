@@ -20,15 +20,11 @@ import java.io.IOException;
 @Component
 public class RoleFilterFunctions
 {
-    public static HandlerFilterFunction<ServerResponse, ServerResponse> validateAccess(String path, String token)
+    public static HandlerFilterFunction<ServerResponse, ServerResponse> validateAccess()
     {
         return (request, next) ->
         {
-            ServerRequest modified = ServerRequest.from(request).header("X-Request-Id", "22").build();
-            //ServerResponse response = next.handle(modified);
-            System.out.println("here is the handler");
-
-            return ServerResponse.status(403).build();
+            return next.handle(request);
         };
     }
 
