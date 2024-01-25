@@ -134,13 +134,11 @@ public class IDMServer {
                 else
                 {
                     responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
-                    responseObserver.onCompleted();
                     return;
                 }
             }catch (SQLException e)
             {
                 responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
-                responseObserver.onCompleted();
                 return;
             }
 
@@ -159,7 +157,6 @@ public class IDMServer {
                 if(user != null)
                 {
                     responseObserver.onError(Status.ALREADY_EXISTS.asRuntimeException());
-                    responseObserver.onCompleted();
                     return;
                 }
                 String insertQ = "insert into Users (login,password,role) values(?,?,?);";
@@ -171,7 +168,6 @@ public class IDMServer {
                 if(insert.executeUpdate() == 0)
                 {
                     responseObserver.onError(Status.CANCELLED.asRuntimeException());
-                    responseObserver.onCompleted();
                     return;
                 }
 
@@ -179,7 +175,6 @@ public class IDMServer {
                 if(user == null)
                 {
                     responseObserver.onError(Status.CANCELLED.asRuntimeException());
-                    responseObserver.onCompleted();
                     return;
                 }
 
@@ -191,7 +186,6 @@ public class IDMServer {
             }catch (SQLException e)
             {
                 responseObserver.onError(Status.NOT_FOUND.asRuntimeException());
-                responseObserver.onCompleted();
                 return;
             }
 
@@ -233,11 +227,16 @@ public class IDMServer {
                 }
                 else
                 {
-                    throw Status.UNAUTHENTICATED.asRuntimeException();
+                    responseObserver.onError(Status.UNAUTHENTICATED.asRuntimeException());
                 }
-            } catch (Exception e)
+            }
+            catch (TokenExpiredException e)
             {
-                throw Status.UNAUTHENTICATED.asRuntimeException();
+                responseObserver.onError(Status.RESOURCE_EXHAUSTED.asRuntimeException());
+            }
+            catch (Exception e)
+            {
+                responseObserver.onError(Status.UNAUTHENTICATED.asRuntimeException());
             }
         }
 
@@ -260,7 +259,7 @@ public class IDMServer {
                 responseObserver.onCompleted();
             }catch (Exception e)
             {
-                throw Status.INTERNAL.asRuntimeException();
+                responseObserver.onError(Status.INTERNAL.asRuntimeException());
             }
 
         }
@@ -277,7 +276,7 @@ public class IDMServer {
             }
             catch (Exception ex)
             {
-                throw Status.INTERNAL.asRuntimeException();
+                responseObserver.onError(Status.INTERNAL.asRuntimeException());
             }
 
             responseObserver.onCompleted();

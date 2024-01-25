@@ -97,24 +97,30 @@ public class PatientController
         patientRepository.setInactive(id);
     }
 
-    @GetMapping("/patients/{id_patient}/physicians")
-    public List<EntityModel<Appointment>> getAllAppointments(@PathVariable String id_patient)
+    @GetMapping("/patients/{id_patient}/physicians/{id_doctor}")
+    public EntityModel<Appointment> getAllAppointments(
+            @PathVariable String id_patient,
+            @PathVariable long id_doctor,
+            @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm") Date date)
     {
-        List<Appointment> appointments = appointmentRepository.findByIdPatient(id_patient);
-        return appointments
-                .stream()
-                .map(appointment -> appointmentModelAssembler.toModel(appointment))
-                .toList();
+        AppointmentKey id = new AppointmentKey();
+        id.setPatient(id_patient);
+        id.setDoctor(id_doctor);
+        id.setDate(date);
+
+        Appointment appointment = appointmentRepository.findById(id);
+        if(appointment == null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent appointment!");
+        else
+            return appointmentModelAssembler.toModel(appointment);
     }
 
-    @GetMapping("/patients/{id_patient}/physicians/{id_doctor}")
+    @GetMapping("/patients/{id_patient}/physicians")
     public List<EntityModel<Appointment>> getFilteredAppointments(
             @PathVariable String id_patient,
-            @PathVariable Long id_doctor,
-            @RequestParam(required = false) String date,
+            @RequestParam(required = false, defaultValue = "") String date,
             @RequestParam(required = false, defaultValue = "") String type)
     {
-        LocalDate localDate = LocalDate.now();
         Calendar c = Calendar.getInstance();
 
         List<Appointment> appointments = new ArrayList<Appointment>();
@@ -136,16 +142,9 @@ public class PatientController
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
                 LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
 
-                AppointmentKey id = new AppointmentKey();
-                id.setPatient(id_patient);
-                id.setDoctor(id_doctor);
-                id.setDate(Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant()));
+                Date searchDate = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
 
-                Appointment appointment = appointmentRepository.findById(id);
-                if(appointment != null)
-                {
-                    appointments.add(appointment);
-                }
+                appointments = appointmentRepository.findByIdPatientAndId_Date(id_patient, searchDate);
 
                 break;
         }

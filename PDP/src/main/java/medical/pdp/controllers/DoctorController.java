@@ -43,6 +43,38 @@ public class DoctorController {
     @Autowired
     private AppointmentModelAssembler appointmentModelAssembler;
 
+    @GetMapping("/physicians/")
+    public PagedModel<EntityModel<Doctor>> paged(
+            @RequestParam(required = false, name = "specialization") Specialization s,
+            @RequestParam(required = false, name = "name") String name,
+            @RequestParam(required = false) Integer page,
+            @RequestParam(required = false) Integer items)
+    {
+        page = (page == null)? 0:page;
+        items = (items == null)? 3:items;
+        PageRequest pageable = PageRequest.of(page, items);
+
+        Page<Doctor> result;
+        if(s == null && name == null)
+        {
+            result = doctorRepository.findAll(pageable);
+        }
+        else if (s == null)
+        {
+            result = doctorRepository.findByLastnameContains(name, pageable);
+        }
+        else if (name == null)
+        {
+            result = doctorRepository.findBySpecialization(s, pageable);
+        }
+        else
+        {
+            result = doctorRepository.findBySpecializationAndLastnameContains(s, name, pageable);
+        }
+
+        return doctorPagedAssembler.toModel(result, doctorModelAssembler);
+    }
+
     @GetMapping("/physicians/{id_doctor}")
     public EntityModel<Doctor> one(@PathVariable Long id_doctor)
     {
@@ -74,40 +106,6 @@ public class DoctorController {
 
         doctor.setIdDoctor(id_doctor);
         return doctorModelAssembler.toModel(doctorRepository.save(doctor));
-    }
-
-    @GetMapping("/physicians/")
-    public PagedModel<EntityModel<Doctor>> paged(
-            @RequestParam(required = false, name = "specialization") Specialization s,
-            @RequestParam(required = false, name = "name") String name,
-            @RequestParam(required = false) Integer page,
-            @RequestParam(required = false) Integer items)
-    {
-        page = (page == null)? 0:page;
-        items = (items == null)? 3:items;
-        PageRequest pageable = PageRequest.of(page, items);
-
-        Page<Doctor> result;
-        if(s == null && name == null)
-        {
-            result = doctorRepository.findAll(pageable);
-        }
-        else if (s == null)
-        {
-            result = doctorRepository.findByLastnameContains(name, pageable);
-        }
-        else if (name == null)
-        {
-            result = doctorRepository.findBySpecialization(s, pageable);
-        }
-        else
-        {
-            result = doctorRepository.findBySpecializationAndLastnameContains(s, name, pageable);
-        }
-
-
-        //return result.stream().map(doctor -> doctorModelAssembler.toModel(doctor)).toList();
-        return doctorPagedAssembler.toModel(result, doctorModelAssembler);
     }
 
     @GetMapping("/physicians/{id_doctor}/patients")

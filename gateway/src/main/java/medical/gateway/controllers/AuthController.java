@@ -22,9 +22,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class AuthController
 {
-    IdentityManagementServiceGrpc.IdentityManagementServiceBlockingStub IDM_Server =
-            IdentityManagementServiceGrpc
-                    .newBlockingStub(ManagedChannelBuilder.forAddress("localhost", 50200).usePlaintext().build());
+    @Autowired
+    private IdentityManagementServiceGrpc.IdentityManagementServiceBlockingStub IDM_Server;
 
     @Autowired
     private RestTemplate restClient;
@@ -48,7 +47,7 @@ public class AuthController
         }
     }
 
-    @PostMapping("/register")
+    @PostMapping(value = "/register", headers = {"Authorization"})
     ResponseEntity<?> registerDoctor(@RequestHeader(HttpHeaders.AUTHORIZATION) String token, @RequestBody DoctorDTO doctor)
     {
         Main.IdentityResponse admin;

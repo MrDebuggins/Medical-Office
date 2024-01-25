@@ -22,7 +22,7 @@ public class AppointmentModelAssembler implements RepresentationModelAssembler<A
                 ""
         )).withSelfRel();
 
-        Link parent = linkTo(methodOn(PatientController.class).getAllAppointments(appointment.getId().getPatient())).withRel("parent");
+        Link parent = linkTo(methodOn(PatientController.class).getFilteredAppointments(appointment.getId().getPatient(),"","")).withRel("parent");
 
         return EntityModel.of(appointment, self, parent);
     }

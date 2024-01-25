@@ -20,5 +20,7 @@ public interface AppointmentRepository extends JpaRepository<Appointment, String
 
     List<Appointment> findById_Date(Date date);
 
+    List<Appointment> findByIdPatientAndId_Date(String cnp, Date date);
+
     void deleteById(AppointmentKey id);
 }

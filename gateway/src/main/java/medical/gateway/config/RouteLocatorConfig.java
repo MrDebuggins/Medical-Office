@@ -8,8 +8,7 @@ import org.springframework.web.servlet.function.ServerResponse;
 
 import java.net.URI;
 
-import static medical.gateway.config.RoleFilterFunctions.validateAccess;
-import static medical.gateway.config.RoleFilterFunctions.validateAccess2;
+import static medical.gateway.config.RoleFilterFunctions.*;
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
 import static org.springframework.web.servlet.function.RouterFunctions.route;
 
