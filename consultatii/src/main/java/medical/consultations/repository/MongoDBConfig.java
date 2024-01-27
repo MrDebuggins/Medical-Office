@@ -18,6 +18,6 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
 
     @Override
     public MongoClient mongoClient(){
-        return MongoClients.create("mongodb://root:apidev@localhost:27017/admin");
+        return MongoClients.create("mongodb://root:apidev@mongodb-medical:27017/admin");
     }
 }

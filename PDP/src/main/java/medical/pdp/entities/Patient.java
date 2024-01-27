@@ -3,6 +3,7 @@ package medical.pdp.entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -34,9 +35,9 @@ public class Patient {
     @Column(name = "activ")
     private boolean isActive = true;
 
-/*    @MapsId("id")
-    @OneToMany
-    private Set<Appointment> appointments;*/
+    //@MapsId("cnp")
+    @OneToMany(mappedBy = "patient")
+    private Set<Appointment> appointments;
 
     public Patient(){}
 

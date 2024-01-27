@@ -26,3 +26,8 @@ BEGIN
 END;
 
 //
+
+insert into pacienti values('1111', 5, 'patient1', 'patient1', 'patient1@mail.com', '0770123456', '2000-02-10', true);
+insert into pacienti values('2222', 6, 'patient2', 'patient2', 'patient2@mail.com', '0770123456', '2000-02-10', true);
+insert into pacienti values('3333', 7, 'patient3', 'patient3', 'patient3@mail.com', '0770123456', '2000-02-10', true);
+insert into pacienti values('4444', 8, 'patient4', 'patient4', 'patient4@mail.com', '0770123456', '2000-02-10', true);

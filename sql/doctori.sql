@@ -11,4 +11,9 @@ CREATE TABLE `doctori` (
   PRIMARY KEY (`id_doctor`),
   UNIQUE KEY `doctori_email_UN` (`email`),
   CONSTRAINT `doctori_tel_CHECK` CHECK (`telefon` like '07%')
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+insert into doctori values(1, 1, 'doctor1', 'doctor1', 'doctor1@mail.com', '0770132456', 'a');
+insert into doctori values(2, 2, 'doctor2', 'doctor2', 'doctor2@mail.com', '0770132456', 'a');
+insert into doctori values(3, 3, 'doctor3', 'doctor3', 'doctor3@mail.com', '0770132456', 'b');
+insert into doctori values(4, 4, 'doctor4', 'doctor4', 'doctor4@mail.com', '0770132456', 'b');

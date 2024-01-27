@@ -47,11 +47,9 @@ public class DoctorController {
     public PagedModel<EntityModel<Doctor>> paged(
             @RequestParam(required = false, name = "specialization") Specialization s,
             @RequestParam(required = false, name = "name") String name,
-            @RequestParam(required = false) Integer page,
-            @RequestParam(required = false) Integer items)
+            @RequestParam(required = false, defaultValue = "0") Integer page,
+            @RequestParam(required = false, defaultValue = "3") Integer items)
     {
-        page = (page == null)? 0:page;
-        items = (items == null)? 3:items;
         PageRequest pageable = PageRequest.of(page, items);
 
         Page<Doctor> result;

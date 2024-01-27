@@ -24,6 +24,11 @@ public class AppointmentModelAssembler implements RepresentationModelAssembler<A
 
         Link parent = linkTo(methodOn(PatientController.class).getFilteredAppointments(appointment.getId().getPatient(),"","")).withRel("parent");
 
+        Link consult = Link.of("http://localhost:8080/api/medical_office/patients/"
+                + appointment.getId().getPatient()
+                + "/physicians/" + appointment.getId().getDoctor()
+                + "/" + appointment.getId().getDate() + "/consultation/").withRel("consultation");
+
         return EntityModel.of(appointment, self, parent);
     }
 }

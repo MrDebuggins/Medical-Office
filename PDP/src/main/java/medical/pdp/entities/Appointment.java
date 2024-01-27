@@ -8,7 +8,7 @@ public class Appointment {
     @EmbeddedId
     AppointmentKey id;
 
-/*    @ManyToOne
+    @ManyToOne
     @MapsId("id_pacient")
     @JoinColumn(name = "id_pacient")
     Patient patient;
@@ -16,7 +16,7 @@ public class Appointment {
     @ManyToOne
     @MapsId("id_doctor")
     @JoinColumn(name = "id_doctor")
-    Doctor doctor;*/
+    Doctor doctor;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

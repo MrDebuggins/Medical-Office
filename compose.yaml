@@ -1,5 +1,6 @@
 services:
   mariadb-medical:
+    container_name: mariadb-medical
     image: mariadb:latest
     ports:
       - "3306"
@@ -16,6 +17,7 @@ services:
       - pdp_net
 
   mariadb-idm:
+    container_name: mariadb-idm
     image: mariadb:latest
     ports:
       - "3306"
@@ -29,6 +31,7 @@ services:
       - idm_net
 
   mongodb-medical:
+    container_name: mongodb-medical
     image: mongo:latest
     ports:
       - "27017"
@@ -39,7 +42,8 @@ services:
     networks:
       - consultations_net
 
-  redis_idm:
+  redis-idm:
+    container_name: redis-idm
     image: redis:latest
     ports:
       - "6379"
@@ -47,6 +51,7 @@ services:
       - idm_net
 
   pdp:
+    container_name: pdp
     image: amazoncorretto:17
     restart: on-failure
     depends_on:
@@ -55,27 +60,47 @@ services:
       - ./PDP/target:/usr/src/app
     command: bash -c "cd /usr/src/app && java -jar PDP-1.0-SNAPSHOT.jar"
     ports:
-      - "50100"
+      - "8080"
     networks:
       - pdp_net
       - gateway_net
 
+  consult:
+    container_name: consult
+    image: amazoncorretto:17
+    restart: on-failure
+    depends_on:
+      - mongodb-medical
+    volumes:
+      - ./consultatii/target:/usr/src/app
+    command: bash -c "cd /usr/src/app && java -jar consultatii-1.0-SNAPSHOT.jar"
+    ports:
+      - "8080"
+    networks:
+      - consultations_net
+      - gateway_net
+    logging:
+      driver: local
+
+
   idm:
+    container_name: idm
     image: amazoncorretto:17
     restart: always
     depends_on:
       - mariadb-idm
-      - redis_idm
+      - redis-idm
     volumes:
       - ./IDM/target:/usr/src/app
     command: bash -c "cd /usr/src/app && java -jar IDM-1.0-SNAPSHOT.jar"
     ports:
-      - "50200"
+      - "8080"
     networks:
       - idm_net
       - gateway_net
 
   gateway:
+    container_name: gateway
     image: amazoncorretto:17
     restart: always
     depends_on:

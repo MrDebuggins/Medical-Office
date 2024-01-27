@@ -16,6 +16,6 @@ public class DoctorModelAssembler implements RepresentationModelAssembler<Doctor
     public EntityModel<Doctor> toModel(Doctor doctor) {
         return EntityModel.of(doctor,
                 linkTo(methodOn(DoctorController.class).one(doctor.getIdDoctor())).withSelfRel(),
-                linkTo(methodOn(DoctorController.class).paged(null, null, 0, 0)).withRel("doctors"));
+                linkTo(methodOn(DoctorController.class).paged(null, null, 0, 0)).withRel("parent"));
     }
 }

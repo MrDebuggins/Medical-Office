@@ -22,13 +22,14 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class AuthController
 {
-    @Autowired
-    private IdentityManagementServiceGrpc.IdentityManagementServiceBlockingStub IDM_Server;
+    private IdentityManagementServiceGrpc.IdentityManagementServiceBlockingStub IDM_Server
+            = IdentityManagementServiceGrpc.newBlockingStub(ManagedChannelBuilder
+            .forAddress("idm", 8080).usePlaintext().build());
 
     @Autowired
     private RestTemplate restClient;
 
-    @PostMapping("/login")
+    @PostMapping("/api/medical_office/login")
     ResponseEntity<?> login(@RequestBody LoginInfo loginInfo)
     {
         try
@@ -43,11 +44,12 @@ public class AuthController
         }
         catch (Exception ex)
         {
+            System.out.println(ex.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    @PostMapping(value = "/register", headers = {"Authorization"})
+    @PostMapping(value = "/api/medical_office/register", headers = {"Authorization"})
     ResponseEntity<?> registerDoctor(@RequestHeader(HttpHeaders.AUTHORIZATION) String token, @RequestBody DoctorDTO doctor)
     {
         Main.IdentityResponse admin;
@@ -64,6 +66,7 @@ public class AuthController
         }
 
         // create user in IDM
+        Main.IdentityResponse user;
         try
         {
             Main.Account idmDoctor = Main.Account.newBuilder()
@@ -72,7 +75,7 @@ public class AuthController
                     .setRole(1)
                     .build();
 
-            Main.IdentityResponse user = IDM_Server.register(idmDoctor);
+            user = IDM_Server.register(idmDoctor);
         }
         catch (Exception ex)
         {
@@ -83,12 +86,13 @@ public class AuthController
         try
         {
             Doctor doctorEntity = new Doctor();
+            doctorEntity.setIdUser(user.getId());
             doctorEntity.setFirstname(doctor.firstname);
             doctorEntity.setLastname(doctor.lastname);
             doctorEntity.setEmail(doctor.email);
             doctorEntity.setPhone(doctor.phone);
             doctorEntity.setSpecialization(doctor.specialization);
-            ResponseEntity response = restClient.postForEntity("http://localhost:8080/doctors/", doctorEntity, Object.class);
+            ResponseEntity response = restClient.postForEntity("http://pdp:8080/doctors/", doctorEntity, Object.class);
 
             if(response.getStatusCode() != HttpStatus.CREATED)
             {
@@ -108,9 +112,10 @@ public class AuthController
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping("/register")
+    @PostMapping("/api/medical_office/register")
     ResponseEntity<?> registerPatient(@RequestBody PatientDTO patient)
     {
+        Main.IdentityResponse user;
         // create user in IDM
         try
         {
@@ -120,24 +125,26 @@ public class AuthController
                     .setRole(2)
                     .build();
 
-            Main.IdentityResponse user = IDM_Server.register(idmDoctor);
+            user = IDM_Server.register(idmDoctor);
         }
         catch (Exception ex)
         {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        // create doctor in PDP
+        // create patient in PDP
         try
         {
             Patient patientEntity = new Patient();
+            patientEntity.setIdUser(user.getId());
+            patientEntity.setCNP(patient.cnp);
             patientEntity.setFirstname(patient.firstname);
             patientEntity.setLastname(patient.lastname);
             patientEntity.setEmail(patient.email);
             patientEntity.setPhone(patient.phone);
             patientEntity.setBorn(patient.born);
             patientEntity.setActive(patient.active);
-            ResponseEntity response = restClient.postForEntity("http://localhost:8080/patients/", patientEntity, Object.class);
+            ResponseEntity response = restClient.postForEntity("http://pdp:8080/api/medical_office/patients/", patientEntity, Object.class);
 
             if(response.getStatusCode() != HttpStatus.CREATED)
             {
@@ -151,6 +158,10 @@ public class AuthController
         }
         catch (Exception ex)
         {
+            Main.Account idmPatient = Main.Account.newBuilder()
+                    .setLogin(patient.login)
+                    .build();
+            IDM_Server.deleteUser(idmPatient);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

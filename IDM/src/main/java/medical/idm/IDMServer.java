@@ -16,27 +16,29 @@ import medical.idm.proto.IdentityManagementServiceGrpc;
 import medical.idm.proto.Main;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-
 import java.io.IOException;
 import java.sql.*;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 
 public class IDMServer {
     private int port;
     private Server server;
 
+    private Logger logger = Logger.getLogger("");
+
     private void start() throws IOException {
-        int port = 50200;
+        int port = 8080;
 
         IdentityManagementService service;
         try {
             service = new IdentityManagementService();
+            logger.info("Connected to Database");
         }catch (SQLException e)
         {
-            //TODO log
-            System.out.println("Failed to connect to database");
+            logger.info("Database connection failed");
             return;
         }
 
@@ -44,6 +46,7 @@ public class IDMServer {
                 .addService(service)
                 .build()
                 .start();
+        logger.info("Server started");
 
         Runtime.getRuntime().addShutdownHook(new Thread(){
             @Override
@@ -56,6 +59,7 @@ public class IDMServer {
     private void stop(){
         if(server != null){
             server.shutdown();
+            logger.info("Server shutdown");
         }
     }
 
@@ -73,7 +77,10 @@ public class IDMServer {
         }catch (Exception e) {System.exit(1);}
     }
 
-    private static class IdentityManagementService extends IdentityManagementServiceGrpc.IdentityManagementServiceImplBase {
+    private static class IdentityManagementService extends IdentityManagementServiceGrpc.IdentityManagementServiceImplBase
+    {
+        Logger logger = Logger.getLogger("");
+
         private static String dbUrl = "jdbc:mariadb://mariadb-idm:3306/User";
         private static String user = "root";
         private static String password = "idmdev";
@@ -103,9 +110,10 @@ public class IDMServer {
                 "⠾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡟⠀⠀⠀⠀⠠⣄⣉⣉⣻⣿⣿⣿⣿⣿⣿⡟⠧⢄⡀⠀⠀⠀⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠅⠀⠀⠀⠀⠘⠉⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠉⠓⠢⣄⠀⠀⠀\n" +
                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣉⣿⣿⣿⣿⣿⣿⣿⣿⣷⣻⡄⠀⠀⢀⡑⠢⠄");
-        private static JedisPool pool = new JedisPool("redis_idm", 6379);
 
         Connection connection = DriverManager.getConnection(dbUrl, user, password);
+
+        //private static JedisPool pool = new JedisPool("localhost", 6379);
 
         private IdentityManagementService() throws SQLException {
         }
@@ -113,6 +121,8 @@ public class IDMServer {
         @Override
         public void authorize(Main.Account req, StreamObserver<Main.Token> responseObserver)
         {
+            logger.info("Authorization for" + req.getLogin());
+
             Main.Token token;
 
             try {
@@ -149,8 +159,9 @@ public class IDMServer {
         @Override
         public void register(Main.Account req, StreamObserver<Main.IdentityResponse> responseObserver)
         {
-            Main.IdentityResponse response;
+            logger.info("Registration for " + req.getLogin());
 
+            Main.IdentityResponse response;
             try {
                 User user = dbGetUserByLogin(req.getLogin());
 
@@ -196,11 +207,11 @@ public class IDMServer {
         @Override
         public void validate(Main.Token req, StreamObserver<Main.IdentityResponse> responseObserver)
         {
+            logger.info("Token validation");
+
             DecodedJWT decodedJWT;
             try {
-                JWTVerifier verifier = JWT.require(algorithm)
-                        .withIssuer("medical_office")
-                        .build();
+                JWTVerifier verifier = JWT.require(algorithm).build();
 
                 decodedJWT = verifier.verify(req.getToken());
 
@@ -209,8 +220,10 @@ public class IDMServer {
                 String query = "select * from Users where id = ?;";
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setLong(1, id);
+                statement.setQueryTimeout(3);
                 ResultSet resultSet = statement.executeQuery();
 
+                JedisPool pool = new JedisPool("redis-idm", 6379);
                 if(
                         resultSet.next() &&
                         resultSet.getInt(4) == decodedJWT.getClaim("role").asInt() &&
@@ -222,16 +235,19 @@ public class IDMServer {
                             .setRole(decodedJWT.getClaim("role").asInt())
                             .build();
 
+                    pool.close();
                     responseObserver.onNext(response);
                     responseObserver.onCompleted();
                 }
                 else
                 {
+                    pool.close();
                     responseObserver.onError(Status.UNAUTHENTICATED.asRuntimeException());
                 }
             }
             catch (TokenExpiredException e)
             {
+                System.out.println("Token expired!");
                 responseObserver.onError(Status.RESOURCE_EXHAUSTED.asRuntimeException());
             }
             catch (Exception e)
@@ -243,6 +259,8 @@ public class IDMServer {
         @Override
         public void invalidate(Main.Token req, StreamObserver<Empty> responseObserver)
         {
+            logger.info("Token invalidation");
+
             try {
                 DecodedJWT decodedJWT;
                 JWTVerifier verifier = JWT.require(algorithm)
@@ -252,8 +270,10 @@ public class IDMServer {
                 decodedJWT = verifier.verify(req.getToken());
                 Long id = Long.decode(decodedJWT.getSubject());
 
+                JedisPool pool = new JedisPool("redis-idm", 6379);
                 Jedis jedis = pool.getResource();
                 jedis.sadd(id.toString(), req.getToken());
+                pool.close();
 
                 responseObserver.onNext(Empty.getDefaultInstance());
                 responseObserver.onCompleted();
@@ -267,6 +287,8 @@ public class IDMServer {
         @Override
         public void deleteUser(Main.Account req, StreamObserver<Empty> responseObserver)
         {
+            logger.info("Failed to create PDP user. Deleting user");
+
             try
             {
                 String deleteQ = "delete from Users where id=?;";
@@ -274,7 +296,7 @@ public class IDMServer {
                 statement.setLong(1, req.getRole());
                 statement.execute();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 responseObserver.onError(Status.INTERNAL.asRuntimeException());
             }
@@ -284,28 +306,30 @@ public class IDMServer {
 
         private User dbGetUserByLogin(String login) throws SQLException
         {
+            User idmUser = null;
             String query = "select * from Users where login = ?;";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, login);
             ResultSet resultSet = statement.executeQuery();
 
-            User user = null;
             if(resultSet.next())
             {
-                user = new User();
-                user.setId(resultSet.getLong(1));
-                user.setLogin(resultSet.getString(2));
-                user.setPassword(resultSet.getString(3));
-                user.setRole(resultSet.getInt(4));
+                idmUser = new User();
+                idmUser.setId(resultSet.getLong(1));
+                idmUser.setLogin(resultSet.getString(2));
+                idmUser.setPassword(resultSet.getString(3));
+                idmUser.setRole(resultSet.getInt(4));
             }
 
-            return user;
+            return idmUser;
         }
 
         private void dbDeleteExpiredTokens(long user_id)
         {
+            JedisPool pool = new JedisPool("redis-idm", 6379);
             Jedis jedis = pool.getResource();
             Set<String> tokens = jedis.smembers(user_id + "");
+            pool.close();
 
             for(String token : tokens)
             {

@@ -30,9 +30,9 @@ public class Doctor {
     @Column(name = "specializare")
     private Specialization specialization;
 
-/*    @MapsId("id")
-    @OneToMany(mappedBy = "id_doctor")
-    private Set<Appointment> appointments;*/
+    //@MapsId("id_doctor")
+    @OneToMany(mappedBy = "doctor")
+    private Set<Appointment> appointments;
 
     public Long getIdDoctor() {
         return idDoctor;
