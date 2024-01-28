@@ -1,0 +1,1076 @@
+gateway          | 
+gateway          |   .   ____          _            __ _ _
+gateway          |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+gateway          | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+gateway          |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+consult          | 
+gateway          |   '  |____| .__|_| |_|_| |_\__, | / / / /
+gateway          |  =========|_|==============|___/=/_/_/_/
+gateway          |  :: Spring Boot ::                (v3.2.1)
+gateway          | 
+consult          |   .   ____          _            __ _ _
+consult          |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+consult          | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+consult          |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+consult          |   '  |____| .__|_| |_|_| |_\__, | / / / /
+consult          |  =========|_|==============|___/=/_/_/_/
+consult          |  :: Spring Boot ::                (v3.2.1)
+consult          | 
+idm              | SLF4J: No SLF4J providers were found.
+idm              | SLF4J: Defaulting to no-operation (NOP) logger implementation
+idm              | SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+idm              | Jan 28, 2024 8:48:49 PM medical.idm.IDMServer start
+idm              | INFO: Database connection failed
+idm              | SLF4J: No SLF4J providers were found.
+gateway          | 2024-01-28T20:48:56.555Z  INFO 7 --- [           main] medical.gateway.Gateway                  : Starting Gateway using Java 17.0.9 with PID 7 (/usr/src/app/gateway-1.0-SNAPSHOT.jar started by root in /usr/src/app)
+gateway          | 2024-01-28T20:48:56.604Z  INFO 7 --- [           main] medical.gateway.Gateway                  : No active profile set, falling back to 1 default profile: "default"
+gateway          | 2024-01-28T20:49:04.302Z  INFO 7 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=337f80e2-3cda-3664-9d74-b6c741500e2e
+gateway          | 2024-01-28T20:49:05.333Z  INFO 7 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+gateway          | 2024-01-28T20:49:05.360Z  INFO 7 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+gateway          | 2024-01-28T20:49:05.362Z  INFO 7 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+gateway          | 2024-01-28T20:49:05.483Z  INFO 7 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+gateway          | 2024-01-28T20:49:05.486Z  INFO 7 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8058 ms
+gateway          | 2024-01-28T20:49:09.397Z  INFO 7 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+gateway          | 2024-01-28T20:49:09.476Z  INFO 7 --- [           main] medical.gateway.Gateway                  : Started Gateway in 17.031 seconds (process running for 21.857)
+gateway          | 2024-01-28T20:51:11.828Z  INFO 7 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+gateway          | 2024-01-28T20:51:11.829Z  INFO 7 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+gateway          | 2024-01-28T20:51:11.832Z  INFO 7 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+gateway          | 2024-01-28T20:51:11.876Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/login
+gateway          | 2024-01-28T20:51:11.880Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: OPTIONS, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T20:51:11.899Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T20:51:13.173Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T20:51:13.520Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T20:51:13.520Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T20:51:14.374Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:14.375Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:14.385Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:15.390Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:15.396Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:15.459Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:18.526Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:18.527Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:18.538Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:18.597Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:25.806Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:25.807Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:25.816Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:25.874Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:27.171Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:27.224Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:46.125Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:46.205Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:47.084Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T20:51:47.132Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T20:51:50.512Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+consult          | 2024-01-28T20:48:54.578Z  INFO 7 --- [           main] medical.consultations.Consultations      : Starting Consultations using Java 17.0.9 with PID 7 (/usr/src/app/consultatii-1.0-SNAPSHOT.jar started by root in /usr/src/app)
+consult          | 2024-01-28T20:48:54.614Z  INFO 7 --- [           main] medical.consultations.Consultations      : No active profile set, falling back to 1 default profile: "default"
+consult          | 2024-01-28T20:49:00.524Z  INFO 7 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+consult          | 2024-01-28T20:49:00.819Z  INFO 7 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 279 ms. Found 1 MongoDB repository interface.
+consult          | 2024-01-28T20:49:03.969Z  INFO 7 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+consult          | 2024-01-28T20:49:04.009Z  INFO 7 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+gateway          | 2024-01-28T20:51:50.585Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+consult          | 2024-01-28T20:49:04.010Z  INFO 7 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+gateway          | 2024-01-28T20:52:31.406Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T20:52:31.438Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T20:52:46.471Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/patients/1111
+gateway          | 2024-01-28T20:52:46.584Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/patients/1111, Status: 200
+gateway          | 2024-01-28T20:53:03.377Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+consult          | 2024-01-28T20:49:04.130Z  INFO 7 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+consult          | 2024-01-28T20:49:04.135Z  INFO 7 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8753 ms
+consult          | 2024-01-28T20:49:04.725Z  INFO 7 --- [           main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync", "version": "4.11.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.49-linuxkit"}, "platform": "Java/Amazon.com Inc./17.0.9+8-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@c386958, com.mongodb.Jep395RecordCodecProvider@157ec23b, com.mongodb.KotlinCodecProvider@44d64d4e]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[mongodb-medical:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+consult          | 2024-01-28T20:49:04.795Z  INFO 7 --- [b-medical:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=mongodb-medical:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=88131320}
+consult          | 2024-01-28T20:49:08.823Z  INFO 7 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+consult          | 2024-01-28T20:49:08.899Z  INFO 7 --- [           main] medical.consultations.Consultations      : Started Consultations in 17.67 seconds (process running for 22.011)
+gateway          | 2024-01-28T20:53:03.429Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:03:11.669Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T21:03:11.712Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:03:12.970Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:03:13.033Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:03:13.043Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:03:13.087Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:03:49.017Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T21:03:49.050Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:03:50.175Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:03:50.219Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:03:50.225Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:03:50.272Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:06:00.465Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:06:00.530Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:06:00.542Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:06:00.592Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:11:54.562Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:11:54.624Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:11:55.418Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:11:55.474Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:11:56.850Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:11:56.898Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:11:57.621Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:11:57.672Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:26:16.604Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:26:16.605Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:26:16.612Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:26:16.652Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:26:16.658Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:26:16.702Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:05.613Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:05.614Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:05.623Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:05.675Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:05.727Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:05.728Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:05.736Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:05.769Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:05.842Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:05.842Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:05.848Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:05.884Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:09.575Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:09.629Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:09.797Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:09.850Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:10.000Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:10.000Z  INFO 7 --- [io-8080-exec-10]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:10.007Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:10.040Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:21.609Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:21.610Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:21.617Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:21.699Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 500
+gateway          | 2024-01-28T21:27:48.528Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/login
+gateway          | 2024-01-28T21:27:48.529Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: OPTIONS, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:27:48.536Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T21:27:48.572Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:27:49.655Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:49.708Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:27:49.714Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:27:49.753Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:29:47.020Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:29:47.077Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+idm              | SLF4J: Defaulting to no-operation (NOP) logger implementation
+idm              | SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+idm              | Jan 28, 2024 8:48:53 PM medical.idm.IDMServer start
+idm              | INFO: Database connection failed
+idm              | SLF4J: No SLF4J providers were found.
+idm              | SLF4J: Defaulting to no-operation (NOP) logger implementation
+idm              | SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+idm              | Jan 28, 2024 8:48:58 PM medical.idm.IDMServer start
+idm              | INFO: Database connection failed
+idm              | SLF4J: No SLF4J providers were found.
+idm              | SLF4J: Defaulting to no-operation (NOP) logger implementation
+idm              | SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+idm              | Jan 28, 2024 8:49:02 PM medical.idm.IDMServer start
+idm              | INFO: Connected to Database
+idm              | Jan 28, 2024 8:49:03 PM medical.idm.IDMServer start
+idm              | INFO: Server started
+idm              | Jan 28, 2024 8:51:12 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 8:51:13 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+gateway          | 2024-01-28T21:29:48.800Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:29:48.800Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:29:48.806Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:29:48.842Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:29:51.853Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:29:51.853Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+idm              | Jan 28, 2024 8:51:13 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:13 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:14 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+gateway          | 2024-01-28T21:29:51.862Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 8:51:15 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:18 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:25 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:27 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:46 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:47 PM medical.idm.IDMServer$IdentityManagementService validate
+gateway          | 2024-01-28T21:29:51.897Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:32:36.731Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:51:50 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:52:31 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 8:52:31 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:52:46 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 8:53:03 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:03:11 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:03:11 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:03:12 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:03:13 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:03:49 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:03:49 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:03:50 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:03:50 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:06:00 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:06:00 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:11:54 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:11:55 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:11:56 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:11:57 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:26:16 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:26:16 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:05 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:05 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:05 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:09 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:09 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:10 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:21 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:48 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:27:48 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:49 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:27:49 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:29:47 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:29:48 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:29:51 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:32:36 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:32:36 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:32:38 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:32:38 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:32:40 PM medical.idm.IDMServer$IdentityManagementService validate
+mongodb-medical  | about to fork child process, waiting until server is ready for connections.
+mariadb-idm      | 2024-01-28 20:48:45+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.2.2+maria~ubu2204 started.
+mariadb-idm      | 2024-01-28 20:48:45+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+mariadb-idm      | 2024-01-28 20:48:45+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.2.2+maria~ubu2204 started.
+mariadb-idm      | 2024-01-28 20:48:46+00:00 [Note] [Entrypoint]: Initializing database files
+gateway          | 2024-01-28T21:32:36.763Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:32:37.998Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:32:38.060Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:32:38.066Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:32:38.109Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:32:39.995Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:32:39.995Z  INFO 7 --- [io-8080-exec-10]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:32:40.001Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:32:40.032Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:33:03.729Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+gateway          | 2024-01-28T21:33:03.756Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:33:05.086Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:33:05.137Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:33:05.144Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:33:05.187Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:33:03 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:33:03 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:33:05 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:33:05 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:33:06 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+idm              | Jan 28, 2024 9:33:08 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+mongodb-medical  | forked process: 28
+mongodb-medical  | 
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.201+00:00"},"s":"I",  "c":"CONTROL",  "id":20698,   "ctx":"main","msg":"***** SERVER RESTARTED *****"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.230+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+gateway          | 2024-01-28T21:33:06.205Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:33:06.249Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:33:08.327Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:33:08.383Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+mariadb-idm      | 
+mariadb-idm      | 
+mariadb-idm      | PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+mariadb-idm      | To do so, start the server, then issue the following command:
+mariadb-idm      | 
+mariadb-idm      | '/usr/bin/mariadb-secure-installation'
+mariadb-idm      | 
+mariadb-idm      | which will also give you the option of removing the test
+mariadb-idm      | databases and anonymous user created by default.  This is
+mariadb-idm      | strongly recommended for production servers.
+mariadb-idm      | 
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.232+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"main","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.241+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.253+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","namespace":"config.tenantMigrationDonors"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.253+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","namespace":"config.tenantMigrationRecipients"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.253+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.253+00:00"},"s":"I",  "c":"TENANT_M", "id":7091600, "ctx":"main","msg":"Starting TenantMigrationAccessBlockerRegistry"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.255+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":28,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"adfbb43d9d34"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.255+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"7.0.4","gitVersion":"38f3e37057a43d2e9f41a39142681a76062d582e","openSSLVersion":"OpenSSL 3.0.2 15 Mar 2022","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2204","distarch":"x86_64","target_arch":"x86_64"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.255+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"22.04"}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.255+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"127.0.0.1","port":27017,"tls":{"mode":"disabled"}},"processManagement":{"fork":true,"pidFilePath":"/tmp/docker-entrypoint-temp-mongod.pid"},"systemLog":{"destination":"file","logAppend":true,"path":"/proc/1/fd/1"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.260+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:46.260+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=429M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,remove=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,backup:0,checkpoint:0,compact:0,evict:0,history_store:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.204+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":943}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.204+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.375+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+mariadb-idm      | See the MariaDB Knowledgebase at https://mariadb.com/kb
+mariadb-idm      | 
+mariadb-idm      | Please report any problems at https://mariadb.org/jira
+mariadb-idm      | 
+mariadb-idm      | The latest information about MariaDB is available at https://mariadb.org/.
+mariadb-idm      | 
+mariadb-idm      | Consider joining MariaDB's strong and vibrant community:
+mariadb-idm      | https://mariadb.org/get-involved/
+mariadb-idm      | 
+mariadb-idm      | 2024-01-28 20:48:54+00:00 [Note] [Entrypoint]: Database files initialized
+mariadb-idm      | 2024-01-28 20:48:54+00:00 [Note] [Entrypoint]: Starting temporary server
+mariadb-idm      | 2024-01-28 20:48:54+00:00 [Note] [Entrypoint]: Waiting for server startup
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] Starting MariaDB 11.2.2-MariaDB-1:11.2.2+maria~ubu2204 source revision 929532a9426d085111c24c63de9c23cc54382259 as process 101
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Number of transaction pools: 1
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.375+00:00"},"s":"W",  "c":"CONTROL",  "id":5123300, "ctx":"initandlisten","msg":"vm.max_map_count is too low","attr":{"currentValue":262144,"recommendedMinimum":1677720,"maxConns":838860},"tags":["startupWarnings"]}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.376+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"admin.system.version","uuidDisposition":"provided","uuid":{"uuid":{"$uuid":"46b576d2-44e3-4b17-aea4-fc2cd95ab525"}},"options":{"uuid":{"$uuid":"46b576d2-44e3-4b17-aea4-fc2cd95ab525"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.450+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"46b576d2-44e3-4b17-aea4-fc2cd95ab525"}},"namespace":"admin.system.version","index":"_id_","ident":"index-1-5016437411990183669","collectionIdent":"collection-0-5016437411990183669","commitTimestamp":null}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.453+00:00"},"s":"I",  "c":"REPL",     "id":20459,   "ctx":"initandlisten","msg":"Setting featureCompatibilityVersion","attr":{"newVersion":"7.0"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.468+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"7.0","context":"setFCV"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.469+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.470+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.470+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"7.0","context":"startup"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.470+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.470+00:00"},"s":"I",  "c":"CONTROL",  "id":6608200, "ctx":"initandlisten","msg":"Initializing cluster server parameters from disk"}
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Using liburing
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Completed initialization of buffer pool
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: End of log at LSN=47629
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Opened 3 undo tablespaces
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: 128 rollback segments in 3 undo tablespaces are active.
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.470+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.471+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.514+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"local.startup_log","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"fdfb9c93-820c-4d89-b63d-2908aa4cc995"}},"options":{"capped":true,"size":10485760}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.613+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"fdfb9c93-820c-4d89-b63d-2908aa4cc995"}},"namespace":"local.startup_log","index":"_id_","ident":"index-3-5016437411990183669","collectionIdent":"collection-2-5016437411990183669","commitTimestamp":null}}
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] InnoDB: log sequence number 47629; transaction id 14
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] Plugin 'FEEDBACK' is disabled.
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] Plugin 'wsrep-provider' is disabled.
+mariadb-idm      | 2024-01-28 20:48:54 0 [Warning] 'user' entry 'root@538bbcd9a621' ignored in --skip-name-resolve mode.
+mariadb-idm      | 2024-01-28 20:48:54 0 [Warning] 'proxies_priv' entry '@% root@538bbcd9a621' ignored in --skip-name-resolve mode.
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] mariadbd: Event Scheduler: Loaded 0 events
+mariadb-idm      | 2024-01-28 20:48:54 0 [Note] mariadbd: ready for connections.
+mariadb-idm      | Version: '11.2.2-MariaDB-1:11.2.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
+mariadb-idm      | 2024-01-28 20:48:55+00:00 [Note] [Entrypoint]: Temporary server started.
+mariadb-idm      | 2024-01-28 20:49:00+00:00 [Note] [Entrypoint]: Creating database User
+mariadb-idm      | 2024-01-28 20:49:00+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+mariadb-idm      | 
+mariadb-idm      | 2024-01-28 20:49:00+00:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/users.sql
+mariadb-idm      | 
+mariadb-idm      | 
+mariadb-idm      | 2024-01-28 20:49:00+00:00 [Note] [Entrypoint]: Stopping temporary server
+mariadb-idm      | 2024-01-28 20:49:00 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+mariadb-idm      | 2024-01-28 20:49:00 0 [Note] InnoDB: FTS optimize thread exiting.
+mariadb-idm      | 2024-01-28 20:49:00 0 [Note] InnoDB: Starting shutdown...
+mariadb-idm      | 2024-01-28 20:49:00 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+mariadb-idm      | 2024-01-28 20:49:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 240128 20:49:00
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.613+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.613+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.619+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.619+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"127.0.0.1"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.619+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+mongodb-medical  | child process started successfully, parent exiting
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.627+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"LogicalSessionCacheRefresh","msg":"createCollection","attr":{"namespace":"config.system.sessions","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"7860f0de-d794-49fb-a7ed-66d1e2a4a348"}},"options":{}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.633+00:00"},"s":"I",  "c":"CONTROL",  "id":20712,   "ctx":"LogicalSessionCacheReap","msg":"Sessions collection is not set up; waiting until next sessions reap interval","attr":{"error":"NamespaceNotFound: config.system.sessions does not exist"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.750+00:00"},"s":"I",  "c":"REPL",     "id":7360102, "ctx":"LogicalSessionCacheRefresh","msg":"Added oplog entry for create to transaction","attr":{"namespace":"config.$cmd","uuid":{"uuid":{"$uuid":"7860f0de-d794-49fb-a7ed-66d1e2a4a348"}},"object":{"create":"system.sessions","idIndex":{"v":2,"key":{"_id":1},"name":"_id_"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.751+00:00"},"s":"I",  "c":"REPL",     "id":7360100, "ctx":"LogicalSessionCacheRefresh","msg":"Added oplog entry for createIndexes to transaction","attr":{"namespace":"config.$cmd","uuid":{"uuid":{"$uuid":"7860f0de-d794-49fb-a7ed-66d1e2a4a348"}},"object":{"createIndexes":"system.sessions","v":2,"key":{"lastUse":1},"name":"lsidTTLIndex","expireAfterSeconds":1800}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.798+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"7860f0de-d794-49fb-a7ed-66d1e2a4a348"}},"namespace":"config.system.sessions","index":"_id_","ident":"index-5-5016437411990183669","collectionIdent":"collection-4-5016437411990183669","commitTimestamp":null}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.799+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"7860f0de-d794-49fb-a7ed-66d1e2a4a348"}},"namespace":"config.system.sessions","index":"lsidTTLIndex","ident":"index-6-5016437411990183669","collectionIdent":"collection-4-5016437411990183669","commitTimestamp":null}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:47.799+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"LogicalSessionCacheRefresh","msg":"Slow query","attr":{"type":"command","ns":"config.system.sessions","command":{"createIndexes":"system.sessions","v":2,"indexes":[{"key":{"lastUse":1},"name":"lsidTTLIndex","expireAfterSeconds":1800}],"ignoreUnknownIndexOptions":false,"writeConcern":{},"$db":"config"},"numYields":0,"reslen":114,"locks":{"ParallelBatchWriterMode":{"acquireCount":{"r":5}},"FeatureCompatibilityVersion":{"acquireCount":{"r":2,"w":3}},"ReplicationStateTransition":{"acquireCount":{"w":5}},"Global":{"acquireCount":{"r":2,"w":3}},"Database":{"acquireCount":{"r":2,"w":3}},"Collection":{"acquireCount":{"r":2,"w":3}},"Mutex":{"acquireCount":{"r":2}}},"flowControl":{"acquireCount":1},"storage":{},"cpuNanos":13918663,"protocol":"op_msg","durationMillis":172}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:50.857+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52466","uuid":{"uuid":{"$uuid":"1a7580ce-18cb-4652-87eb-104948866d82"}},"connectionId":1,"connectionCount":1}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:50.882+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"127.0.0.1:52466","client":"conn1","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Shutdown completed; log sequence number 53095; transaction id 39
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] mariadbd: Shutdown complete
+mariadb-idm      | 
+mariadb-idm      | 2024-01-28 20:49:01+00:00 [Note] [Entrypoint]: Temporary server stopped
+mariadb-idm      | 
+mariadb-idm      | 2024-01-28 20:49:01+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+mariadb-idm      | 
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] Starting MariaDB 11.2.2-MariaDB-1:11.2.2+maria~ubu2204 source revision 929532a9426d085111c24c63de9c23cc54382259 as process 1
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Number of transaction pools: 1
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Using liburing
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Completed initialization of buffer pool
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:50.989+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52480","uuid":{"uuid":{"$uuid":"fd3fe952-82a0-42e8-bb8f-cf06d3a364ca"}},"connectionId":2,"connectionCount":2}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:50.990+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52494","uuid":{"uuid":{"$uuid":"2b514470-4f48-4ca5-b298-c55e3db50cad"}},"connectionId":3,"connectionCount":3}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:51.017+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"127.0.0.1:52480","client":"conn2","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:51.018+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn3","msg":"client metadata","attr":{"remote":"127.0.0.1:52494","client":"conn3","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:51.055+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52500","uuid":{"uuid":{"$uuid":"8fa711da-6663-45a9-91c0-df42ca686587"}},"connectionId":4,"connectionCount":4}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:51.055+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn2","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":38}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:51.097+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn4","msg":"client metadata","attr":{"remote":"127.0.0.1:52500","client":"conn4","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:51.100+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn4","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":2}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:52.274+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn1","msg":"Connection ended","attr":{"remote":"127.0.0.1:52466","uuid":{"uuid":{"$uuid":"1a7580ce-18cb-4652-87eb-104948866d82"}},"connectionId":1,"connectionCount":3}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:52.276+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn4","msg":"Connection ended","attr":{"remote":"127.0.0.1:52500","uuid":{"uuid":{"$uuid":"8fa711da-6663-45a9-91c0-df42ca686587"}},"connectionId":4,"connectionCount":2}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:52.277+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn3","msg":"Connection ended","attr":{"remote":"127.0.0.1:52494","uuid":{"uuid":{"$uuid":"2b514470-4f48-4ca5-b298-c55e3db50cad"}},"connectionId":3,"connectionCount":1}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:52.278+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn2","msg":"Connection ended","attr":{"remote":"127.0.0.1:52480","uuid":{"uuid":{"$uuid":"fd3fe952-82a0-42e8-bb8f-cf06d3a364ca"}},"connectionId":2,"connectionCount":0}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.743+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52514","uuid":{"uuid":{"$uuid":"82680cd8-8b12-4c63-b195-603ea04fac60"}},"connectionId":5,"connectionCount":1}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.751+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn5","msg":"client metadata","attr":{"remote":"127.0.0.1:52514","client":"conn5","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.790+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52528","uuid":{"uuid":{"$uuid":"354308b2-e729-4759-82c6-5efd54dc9f68"}},"connectionId":6,"connectionCount":2}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.791+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52542","uuid":{"uuid":{"$uuid":"8fa904d9-b499-439c-a858-a1a87debd8db"}},"connectionId":7,"connectionCount":3}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.792+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn6","msg":"client metadata","attr":{"remote":"127.0.0.1:52528","client":"conn6","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: End of log at LSN=53095
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Opened 3 undo tablespaces
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: 128 rollback segments in 3 undo tablespaces are active.
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: log sequence number 53095; transaction id 40
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.793+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn7","msg":"client metadata","attr":{"remote":"127.0.0.1:52542","client":"conn7","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.798+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52552","uuid":{"uuid":{"$uuid":"ec7cefa8-c5ea-44b8-8f05-0b910b1f4d66"}},"connectionId":8,"connectionCount":4}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.799+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn6","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":6}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.800+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"127.0.0.1:52554","uuid":{"uuid":{"$uuid":"6ba61629-01f6-4559-861a-9a45a04a5831"}},"connectionId":9,"connectionCount":5}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.802+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn8","msg":"client metadata","attr":{"remote":"127.0.0.1:52552","client":"conn8","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.807+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn8","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":5}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.811+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn9","msg":"client metadata","attr":{"remote":"127.0.0.1:52554","client":"conn9","doc":{"application":{"name":"mongosh 2.1.0"},"driver":{"name":"nodejs|mongosh","version":"6.3.0|2.1.0"},"platform":"Node.js v20.9.0, LE","os":{"name":"linux","architecture":"x64","version":"5.15.49-linuxkit","type":"Linux"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:53.814+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn9","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":3}}
+mongodb-medical  | admin> ... ... ... ... {"t":{"$date":"2024-01-28T20:48:55.527+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"conn9","msg":"createCollection","attr":{"namespace":"admin.system.users","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"4fa5817e-569c-475f-8c13-49182b6333c4"}},"options":{}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.598+00:00"},"s":"I",  "c":"REPL",     "id":7360102, "ctx":"conn9","msg":"Added oplog entry for create to transaction","attr":{"namespace":"admin.$cmd","uuid":{"uuid":{"$uuid":"4fa5817e-569c-475f-8c13-49182b6333c4"}},"object":{"create":"system.users","idIndex":{"v":2,"key":{"_id":1},"name":"_id_"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.600+00:00"},"s":"I",  "c":"REPL",     "id":7360100, "ctx":"conn9","msg":"Added oplog entry for createIndexes to transaction","attr":{"namespace":"admin.$cmd","uuid":{"uuid":{"$uuid":"4fa5817e-569c-475f-8c13-49182b6333c4"}},"object":{"createIndexes":"system.users","name":"user_1_db_1","key":{"user":1,"db":1},"unique":true,"v":2}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.630+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"conn9","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"4fa5817e-569c-475f-8c13-49182b6333c4"}},"namespace":"admin.system.users","index":"_id_","ident":"index-8-5016437411990183669","collectionIdent":"collection-7-5016437411990183669","commitTimestamp":null}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.630+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"conn9","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"4fa5817e-569c-475f-8c13-49182b6333c4"}},"namespace":"admin.system.users","index":"user_1_db_1","ident":"index-9-5016437411990183669","collectionIdent":"collection-7-5016437411990183669","commitTimestamp":null}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.632+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn9","msg":"Slow query","attr":{"type":"command","ns":"admin.system.users","appName":"mongosh 2.1.0","command":{"insert":"system.users","bypassDocumentValidation":false,"ordered":true,"$db":"admin"},"ninserted":1,"keysInserted":2,"numYields":0,"reslen":45,"locks":{"ParallelBatchWriterMode":{"acquireCount":{"r":3}},"FeatureCompatibilityVersion":{"acquireCount":{"w":3}},"ReplicationStateTransition":{"acquireCount":{"w":3}},"Global":{"acquireCount":{"w":3}},"Database":{"acquireCount":{"w":3}},"Collection":{"acquireCount":{"w":3}},"Mutex":{"acquireCount":{"r":1}}},"flowControl":{"acquireCount":4},"storage":{},"cpuNanos":12647141,"remote":"127.0.0.1:52554","protocol":"op_msg","durationMillis":105}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.634+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn9","msg":"Slow query","attr":{"type":"command","ns":"admin.$cmd","appName":"mongosh 2.1.0","command":{"createUser":"root","pwd":"xxx","roles":[{"role":"root","db":"admin"}],"lsid":{"id":{"$uuid":"e0a6c5ed-f3fb-47ee-8561-c18cca6edd76"}},"$db":"admin"},"numYields":0,"reslen":38,"locks":{"ParallelBatchWriterMode":{"acquireCount":{"r":4}},"FeatureCompatibilityVersion":{"acquireCount":{"r":1,"w":4}},"ReplicationStateTransition":{"acquireCount":{"w":4}},"Global":{"acquireCount":{"r":1,"w":4}},"Database":{"acquireCount":{"w":4}},"Collection":{"acquireCount":{"w":4}},"Mutex":{"acquireCount":{"r":1}}},"flowControl":{"acquireCount":4},"storage":{},"cpuNanos":68769385,"remote":"127.0.0.1:52554","protocol":"op_msg","durationMillis":306}}
+mongodb-medical  | { ok: 1 }
+mongodb-medical  | admin> {"t":{"$date":"2024-01-28T20:48:55.741+00:00"},"s":"I",  "c":"-",        "id":20883,   "ctx":"conn5","msg":"Interrupted operation as its client disconnected","attr":{"opId":124}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.743+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn5","msg":"Connection ended","attr":{"remote":"127.0.0.1:52514","uuid":{"uuid":{"$uuid":"82680cd8-8b12-4c63-b195-603ea04fac60"}},"connectionId":5,"connectionCount":4}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.743+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn8","msg":"Connection ended","attr":{"remote":"127.0.0.1:52552","uuid":{"uuid":{"$uuid":"ec7cefa8-c5ea-44b8-8f05-0b910b1f4d66"}},"connectionId":8,"connectionCount":3}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.744+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn7","msg":"Connection ended","attr":{"remote":"127.0.0.1:52542","uuid":{"uuid":{"$uuid":"8fa904d9-b499-439c-a858-a1a87debd8db"}},"connectionId":7,"connectionCount":2}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.745+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn9","msg":"Connection ended","attr":{"remote":"127.0.0.1:52554","uuid":{"uuid":{"$uuid":"6ba61629-01f6-4559-861a-9a45a04a5831"}},"connectionId":9,"connectionCount":1}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:55.746+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn6","msg":"Connection ended","attr":{"remote":"127.0.0.1:52528","uuid":{"uuid":{"$uuid":"354308b2-e729-4759-82c6-5efd54dc9f68"}},"connectionId":6,"connectionCount":0}}
+mongodb-medical  | 
+mongodb-medical  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+mongodb-medical  | 
+mongodb-medical  | 
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.782+00:00"},"s":"I",  "c":"CONTROL",  "id":20698,   "ctx":"main","msg":"***** SERVER RESTARTED *****"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.793+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.797+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"main","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.798+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] Plugin 'FEEDBACK' is disabled.
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] Plugin 'wsrep-provider' is disabled.
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] InnoDB: Buffer pool(s) load completed at 240128 20:49:01
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] Server socket created on IP: '0.0.0.0'.
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] Server socket created on IP: '::'.
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] mariadbd: Event Scheduler: Loaded 0 events
+mariadb-idm      | 2024-01-28 20:49:01 0 [Note] mariadbd: ready for connections.
+mariadb-idm      | Version: '11.2.2-MariaDB-1:11.2.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.801+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","namespace":"config.tenantMigrationDonors"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.802+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","namespace":"config.tenantMigrationRecipients"}}
+mongodb-medical  | Killing process with pid: 28
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.803+00:00"},"s":"I",  "c":"CONTROL",  "id":23377,   "ctx":"SignalHandler","msg":"Received signal","attr":{"signal":15,"error":"Terminated"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.804+00:00"},"s":"I",  "c":"CONTROL",  "id":23378,   "ctx":"SignalHandler","msg":"Signal was sent by kill(2)","attr":{"pid":109,"uid":999}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.804+00:00"},"s":"I",  "c":"CONTROL",  "id":23381,   "ctx":"SignalHandler","msg":"will terminate after current cmd ends"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.804+00:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"SignalHandler","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":15000}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.804+00:00"},"s":"I",  "c":"REPL",     "id":4794602, "ctx":"SignalHandler","msg":"Attempting to enter quiesce mode"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.804+00:00"},"s":"I",  "c":"-",        "id":6371601, "ctx":"SignalHandler","msg":"Shutting down the FLE Crud thread pool"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.805+00:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"SignalHandler","msg":"Shutting down the MirrorMaestro"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.805+00:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"SignalHandler","msg":"Shutting down the WaitForMajorityService"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.806+00:00"},"s":"I",  "c":"CONTROL",  "id":4784903, "ctx":"SignalHandler","msg":"Shutting down the LogicalSessionCache"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.814+00:00"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"SignalHandler","msg":"Shutdown: going to close listening sockets"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.816+00:00"},"s":"I",  "c":"NETWORK",  "id":23017,   "ctx":"listener","msg":"removing socket file","attr":{"path":"/tmp/mongodb-27017.sock"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.816+00:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"SignalHandler","msg":"Shutting down the global connection pool"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.817+00:00"},"s":"I",  "c":"CONTROL",  "id":4784906, "ctx":"SignalHandler","msg":"Shutting down the FlowControlTicketholder"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.817+00:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"SignalHandler","msg":"Stopping further Flow Control ticket acquisitions."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.817+00:00"},"s":"I",  "c":"CONTROL",  "id":4784908, "ctx":"SignalHandler","msg":"Shutting down the PeriodicThreadToAbortExpiredTransactions"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.818+00:00"},"s":"I",  "c":"REPL",     "id":4784909, "ctx":"SignalHandler","msg":"Shutting down the ReplicationCoordinator"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.818+00:00"},"s":"I",  "c":"SHARDING", "id":4784910, "ctx":"SignalHandler","msg":"Shutting down the ShardingInitializationMongoD"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.818+00:00"},"s":"I",  "c":"REPL",     "id":4784911, "ctx":"SignalHandler","msg":"Enqueuing the ReplicationStateTransitionLock for shutdown"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.818+00:00"},"s":"I",  "c":"-",        "id":4784912, "ctx":"SignalHandler","msg":"Killing all operations for shutdown"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.819+00:00"},"s":"I",  "c":"-",        "id":4695300, "ctx":"SignalHandler","msg":"Interrupted all currently running operations","attr":{"opsKilled":3}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.819+00:00"},"s":"I",  "c":"TENANT_M", "id":5093807, "ctx":"SignalHandler","msg":"Shutting down all TenantMigrationAccessBlockers on global shutdown"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.820+00:00"},"s":"I",  "c":"ASIO",     "id":22582,   "ctx":"TenantMigrationBlockerNet","msg":"Killing all outstanding egress activity."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.820+00:00"},"s":"I",  "c":"ASIO",     "id":6529201, "ctx":"SignalHandler","msg":"Network interface redundant shutdown","attr":{"state":"Stopped"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.820+00:00"},"s":"I",  "c":"ASIO",     "id":22582,   "ctx":"SignalHandler","msg":"Killing all outstanding egress activity."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.820+00:00"},"s":"I",  "c":"COMMAND",  "id":4784913, "ctx":"SignalHandler","msg":"Shutting down all open transactions"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"REPL",     "id":4784914, "ctx":"SignalHandler","msg":"Acquiring the ReplicationStateTransitionLock for shutdown"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"INDEX",    "id":4784915, "ctx":"SignalHandler","msg":"Shutting down the IndexBuildsCoordinator"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"SignalHandler","msg":"Shutting down the ReplicaSetMonitor"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"SignalHandler","msg":"Shutting down the MigrationUtilExecutor"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"ASIO",     "id":22582,   "ctx":"MigrationUtil-TaskExecutor","msg":"Killing all outstanding egress activity."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"COMMAND",  "id":4784923, "ctx":"SignalHandler","msg":"Shutting down the ServiceEntryPoint"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.821+00:00"},"s":"I",  "c":"CONTROL",  "id":4784927, "ctx":"SignalHandler","msg":"Shutting down the HealthLog"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.822+00:00"},"s":"I",  "c":"CONTROL",  "id":4784928, "ctx":"SignalHandler","msg":"Shutting down the TTL monitor"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.822+00:00"},"s":"I",  "c":"INDEX",    "id":3684100, "ctx":"SignalHandler","msg":"Shutting down TTL collection monitor thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.822+00:00"},"s":"I",  "c":"INDEX",    "id":3684101, "ctx":"SignalHandler","msg":"Finished shutting down TTL collection monitor thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.822+00:00"},"s":"I",  "c":"CONTROL",  "id":6278511, "ctx":"SignalHandler","msg":"Shutting down the Change Stream Expired Pre-images Remover"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.822+00:00"},"s":"I",  "c":"CONTROL",  "id":4784929, "ctx":"SignalHandler","msg":"Acquiring the global lock for shutdown"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.823+00:00"},"s":"I",  "c":"CONTROL",  "id":4784930, "ctx":"SignalHandler","msg":"Shutting down the storage engine"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.823+00:00"},"s":"I",  "c":"STORAGE",  "id":22320,   "ctx":"SignalHandler","msg":"Shutting down journal flusher thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.824+00:00"},"s":"I",  "c":"STORAGE",  "id":22321,   "ctx":"SignalHandler","msg":"Finished shutting down journal flusher thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.824+00:00"},"s":"I",  "c":"STORAGE",  "id":22322,   "ctx":"SignalHandler","msg":"Shutting down checkpoint thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.825+00:00"},"s":"I",  "c":"STORAGE",  "id":22323,   "ctx":"SignalHandler","msg":"Finished shutting down checkpoint thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.825+00:00"},"s":"I",  "c":"STORAGE",  "id":22261,   "ctx":"SignalHandler","msg":"Timestamp monitor shutting down"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.825+00:00"},"s":"I",  "c":"STORAGE",  "id":20282,   "ctx":"SignalHandler","msg":"Deregistering all the collections"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.825+00:00"},"s":"I",  "c":"STORAGE",  "id":22317,   "ctx":"SignalHandler","msg":"WiredTigerKVEngine shutting down"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.825+00:00"},"s":"I",  "c":"STORAGE",  "id":22318,   "ctx":"SignalHandler","msg":"Shutting down session sweeper thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.826+00:00"},"s":"I",  "c":"STORAGE",  "id":22319,   "ctx":"SignalHandler","msg":"Finished shutting down session sweeper thread"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:56.829+00:00"},"s":"I",  "c":"STORAGE",  "id":4795902, "ctx":"SignalHandler","msg":"Closing WiredTiger","attr":{"closeConfig":"leak_memory=true,use_timestamp=false,"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.009+00:00"},"s":"I",  "c":"STORAGE",  "id":4795901, "ctx":"SignalHandler","msg":"WiredTiger closed","attr":{"durationMillis":180}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.010+00:00"},"s":"I",  "c":"STORAGE",  "id":22279,   "ctx":"SignalHandler","msg":"shutdown: removing fs lock..."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.011+00:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"SignalHandler","msg":"Dropping the scope cache for shutdown"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.011+00:00"},"s":"I",  "c":"FTDC",     "id":20626,   "ctx":"SignalHandler","msg":"Shutting down full-time diagnostic data capture"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.014+00:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"SignalHandler","msg":"Now exiting"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.014+00:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"SignalHandler","msg":"Shutting down","attr":{"exitCode":0}}
+mongodb-medical  | 
+mongodb-medical  | MongoDB init process complete; ready for start up.
+mongodb-medical  | 
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.917+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"main","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.919+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.920+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.933+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","namespace":"config.tenantMigrationDonors"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.933+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","namespace":"config.tenantMigrationRecipients"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.933+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.933+00:00"},"s":"I",  "c":"TENANT_M", "id":7091600, "ctx":"main","msg":"Starting TenantMigrationAccessBlockerRegistry"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.934+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"adfbb43d9d34"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.934+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"7.0.4","gitVersion":"38f3e37057a43d2e9f41a39142681a76062d582e","openSSLVersion":"OpenSSL 3.0.2 15 Mar 2022","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2204","distarch":"x86_64","target_arch":"x86_64"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.934+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"22.04"}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.934+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"},"security":{"authorization":"enabled"}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.946+00:00"},"s":"I",  "c":"STORAGE",  "id":22270,   "ctx":"initandlisten","msg":"Storage engine to use detected by data files","attr":{"dbpath":"/data/db","storageEngine":"wiredTiger"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.948+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:48:57.948+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=429M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,remove=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,backup:0,checkpoint:0,compact:0,evict:0,history_store:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.181+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":2233}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.182+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.232+00:00"},"s":"W",  "c":"CONTROL",  "id":5123300, "ctx":"initandlisten","msg":"vm.max_map_count is too low","attr":{"currentValue":262144,"recommendedMinimum":1677720,"maxConns":838860},"tags":["startupWarnings"]}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.240+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":21},"outgoing":{"minWireVersion":6,"maxWireVersion":21},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":21},"incomingInternalClient":{"minWireVersion":21,"maxWireVersion":21},"outgoing":{"minWireVersion":21,"maxWireVersion":21},"isInternalClient":true}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.240+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"7.0","context":"startup"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.241+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.243+00:00"},"s":"I",  "c":"CONTROL",  "id":6608200, "ctx":"initandlisten","msg":"Initializing cluster server parameters from disk"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.244+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.245+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.256+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.256+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.266+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.270+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:00.271+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:04.702+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.22.0.3:46484","uuid":{"uuid":{"$uuid":"f0278175-713e-435c-bbe1-381438d3438c"}},"connectionId":1,"connectionCount":1}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:04.705+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.22.0.3:46486","uuid":{"uuid":{"$uuid":"1ac60d6d-a03d-4eda-a43b-791178befa42"}},"connectionId":2,"connectionCount":2}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:04.725+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"172.22.0.3:46486","client":"conn2","doc":{"driver":{"name":"mongo-java-driver|sync","version":"4.11.1"},"os":{"type":"Linux","name":"Linux","architecture":"amd64","version":"5.15.49-linuxkit"},"platform":"Java/Amazon.com Inc./17.0.9+8-LTS"}}}
+mongodb-medical  | {"t":{"$date":"2024-01-28T20:49:04.730+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"172.22.0.3:46484","client":"conn1","doc":{"driver":{"name":"mongo-java-driver|sync","version":"4.11.1"},"os":{"type":"Linux","name":"Linux","architecture":"amd64","version":"5.15.49-linuxkit"},"platform":"Java/Amazon.com Inc./17.0.9+8-LTS"}}}
+pdp              | 
+pdp              |   .   ____          _            __ _ _
+pdp              |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+pdp              | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+pdp              |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+pdp              |   '  |____| .__|_| |_|_| |_\__, | / / / /
+pdp              |  =========|_|==============|___/=/_/_/_/
+pdp              |  :: Spring Boot ::                (v3.1.5)
+pdp              | 
+pdp              | 2024-01-28T20:50:58.906Z  INFO 7 --- [           main] medical.pdp.PDP                          : Starting PDP v1.0-SNAPSHOT using Java 17.0.9 with PID 7 (/usr/src/app/PDP-1.0-SNAPSHOT.jar started by root in /usr/src/app)
+pdp              | 2024-01-28T20:50:58.910Z  INFO 7 --- [           main] medical.pdp.PDP                          : No active profile set, falling back to 1 default profile: "default"
+pdp              | 2024-01-28T20:51:00.051Z  INFO 7 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+pdp              | 2024-01-28T20:51:00.175Z  INFO 7 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 3 JPA repository interfaces.
+pdp              | 2024-01-28T20:51:01.173Z  INFO 7 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+pdp              | 2024-01-28T20:51:01.199Z  INFO 7 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+pdp              | 2024-01-28T20:51:01.199Z  INFO 7 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+pdp              | 2024-01-28T20:51:01.321Z  INFO 7 --- [           main] o.a.c.c.C.[.[.[/api/medical_office]      : Initializing Spring embedded WebApplicationContext
+pdp              | 2024-01-28T20:51:01.323Z  INFO 7 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2304 ms
+pdp              | 2024-01-28T20:51:01.578Z  INFO 7 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+pdp              | 2024-01-28T20:51:01.768Z  INFO 7 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@4bf3798b
+pdp              | 2024-01-28T20:51:01.772Z  INFO 7 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+pdp              | 2024-01-28T20:51:01.851Z  INFO 7 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+pdp              | 2024-01-28T20:51:01.961Z  INFO 7 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+pdp              | 2024-01-28T20:51:01.966Z  INFO 7 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+pdp              | 2024-01-28T20:51:02.440Z  INFO 7 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+pdp              | 2024-01-28T20:51:03.048Z  WARN 7 --- [           main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): medical.pdp.entities.AppointmentKey
+pdp              | 2024-01-28T20:51:03.048Z  WARN 7 --- [           main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): medical.pdp.entities.AppointmentKey
+pdp              | 2024-01-28T20:51:04.037Z  INFO 7 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+pdp              | 2024-01-28T20:51:04.043Z  INFO 7 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+pdp              | 2024-01-28T20:51:04.534Z  INFO 7 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+pdp              | 2024-01-28T20:51:04.973Z  WARN 7 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+pdp              | 2024-01-28T20:51:05.674Z  INFO 7 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api/medical_office'
+pdp              | 2024-01-28T20:51:05.702Z  INFO 7 --- [           main] medical.pdp.PDP                          : Started PDP in 7.497 seconds (process running for 8.473)
+pdp              | 2024-01-28T20:51:14.698Z  INFO 7 --- [nio-8080-exec-1] o.a.c.c.C.[.[.[/api/medical_office]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+pdp              | 2024-01-28T20:51:14.699Z  INFO 7 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+pdp              | 2024-01-28T20:51:14.701Z  INFO 7 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+pdp              | 2024-01-28T20:51:14.772Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:15.357Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:15.433Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:15.455Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:18.572Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:18.593Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:25.848Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:25.870Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:27.200Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:27.220Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:46.164Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:46.201Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:47.112Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:47.129Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:51:50.544Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:51:50.580Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T20:52:46.498Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/patients/1111
+pdp              | 2024-01-28T20:52:46.580Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/patients/1111, Status: 200
+pdp              | 2024-01-28T20:53:03.402Z  INFO 7 --- [io-8080-exec-10]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T20:53:03.426Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:03:13.003Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:03:13.028Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:03:13.064Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:03:13.085Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:03:50.197Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:03:50.216Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:03:50.248Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:03:50.269Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:06:00.494Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:06:00.522Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:06:00.564Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:06:00.587Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:11:54.592Z  INFO 7 --- [io-8080-exec-10]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:11:54.621Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:11:55.448Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:11:55.468Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:11:56.873Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:11:56.894Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:11:57.646Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:11:57.667Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:26:16.632Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:26:16.647Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:26:16.676Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:26:16.696Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:05.644Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:05.671Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:05.754Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:05.765Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:05.869Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:05.881Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:09.604Z  INFO 7 --- [io-8080-exec-10]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:09.625Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:09.826Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:09.846Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:10.023Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:10.036Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:21.641Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:21.647Z ERROR 7 --- [nio-8080-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/api/medical_office] threw exception [Request processing failed: java.lang.IllegalArgumentException: Page size must not be less than one] with root cause
+pdp              | 
+pdp              | java.lang.IllegalArgumentException: Page size must not be less than one
+pdp              | 	at org.springframework.data.domain.AbstractPageRequest.<init>(AbstractPageRequest.java:50) ~[spring-data-commons-3.1.5.jar!/:3.1.5]
+pdp              | 	at org.springframework.data.domain.PageRequest.<init>(PageRequest.java:46) ~[spring-data-commons-3.1.5.jar!/:3.1.5]
+pdp              | 	at org.springframework.data.domain.PageRequest.of(PageRequest.java:73) ~[spring-data-commons-3.1.5.jar!/:3.1.5]
+pdp              | 	at org.springframework.data.domain.PageRequest.of(PageRequest.java:61) ~[spring-data-commons-3.1.5.jar!/:3.1.5]
+pdp              | 	at medical.pdp.controllers.DoctorController.paged(DoctorController.java:53) ~[classes!/:1.0-SNAPSHOT]
+pdp              | 	at jdk.internal.reflect.GeneratedMethodAccessor49.invoke(Unknown Source) ~[na:na]
+pdp              | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+pdp              | 	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+pdp              | 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.13.jar!/:6.0.13]
+pdp              | 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.springframework.web.filter.ForwardedHeaderFilter.doFilterInternal(ForwardedHeaderFilter.java:153) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar!/:6.0.13]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.15.jar!/:na]
+pdp              | 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+pdp              | 
+pdp              | 2024-01-28T21:27:21.678Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/error
+pdp              | 2024-01-28T21:27:21.695Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/error, Status: 500
+pdp              | 2024-01-28T21:27:49.688Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:49.705Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:27:49.733Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:27:49.749Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:29:47.054Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:29:47.071Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:29:48.828Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:29:48.839Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:29:51.887Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:29:51.895Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:32:38.030Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:32:38.057Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:32:38.086Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:32:38.104Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:32:40.018Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:32:40.026Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:33:05.108Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:33:05.133Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:33:05.163Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:33:05.184Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:33:06.228Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:33:06.243Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:33:08.356Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:33:08.378Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+redis-idm        | 1:C 28 Jan 2024 20:48:45.359 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-idm        | 1:C 28 Jan 2024 20:48:45.359 * Redis version=7.2.3, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-idm        | 1:C 28 Jan 2024 20:48:45.359 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+redis-idm        | 1:M 28 Jan 2024 20:48:45.360 * monotonic clock: POSIX clock_gettime
+redis-idm        | 1:M 28 Jan 2024 20:48:45.367 * Running mode=standalone, port=6379.
+redis-idm        | 1:M 28 Jan 2024 20:48:45.386 * Server initialized
+redis-idm        | 1:M 28 Jan 2024 20:48:45.386 * Ready to accept connections tcp
+mariadb-medical  | 2024-01-28 22:48:45+02:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.2.2+maria~ubu2204 started.
+mariadb-medical  | 2024-01-28 22:48:45+02:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+mariadb-medical  | 2024-01-28 22:48:45+02:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.2.2+maria~ubu2204 started.
+mariadb-medical  | 2024-01-28 22:48:46+02:00 [Note] [Entrypoint]: Initializing database files
+mariadb-medical  | 
+mariadb-medical  | 
+mariadb-medical  | PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+mariadb-medical  | To do so, start the server, then issue the following command:
+mariadb-medical  | 
+mariadb-medical  | '/usr/bin/mariadb-secure-installation'
+mariadb-medical  | 
+mariadb-medical  | which will also give you the option of removing the test
+mariadb-medical  | databases and anonymous user created by default.  This is
+mariadb-medical  | strongly recommended for production servers.
+mariadb-medical  | 
+mariadb-medical  | See the MariaDB Knowledgebase at https://mariadb.com/kb
+mariadb-medical  | 
+mariadb-medical  | Please report any problems at https://mariadb.org/jira
+mariadb-medical  | 
+mariadb-medical  | The latest information about MariaDB is available at https://mariadb.org/.
+mariadb-medical  | 
+mariadb-medical  | Consider joining MariaDB's strong and vibrant community:
+mariadb-medical  | https://mariadb.org/get-involved/
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:48:54+02:00 [Note] [Entrypoint]: Database files initialized
+mariadb-medical  | 2024-01-28 22:48:54+02:00 [Note] [Entrypoint]: Starting temporary server
+mariadb-medical  | 2024-01-28 22:48:54+02:00 [Note] [Entrypoint]: Waiting for server startup
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] Starting MariaDB 11.2.2-MariaDB-1:11.2.2+maria~ubu2204 source revision 929532a9426d085111c24c63de9c23cc54382259 as process 107
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Number of transaction pools: 1
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Using liburing
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Completed initialization of buffer pool
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: End of log at LSN=47629
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Opened 3 undo tablespaces
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: 128 rollback segments in 3 undo tablespaces are active.
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] InnoDB: log sequence number 47629; transaction id 14
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] Plugin 'FEEDBACK' is disabled.
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] Plugin 'wsrep-provider' is disabled.
+mariadb-medical  | 2024-01-28 22:48:54 0 [Warning] 'user' entry 'root@8f91481610a3' ignored in --skip-name-resolve mode.
+mariadb-medical  | 2024-01-28 22:48:54 0 [Warning] 'proxies_priv' entry '@% root@8f91481610a3' ignored in --skip-name-resolve mode.
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] mariadbd: Event Scheduler: Loaded 0 events
+mariadb-medical  | 2024-01-28 22:48:54 0 [Note] mariadbd: ready for connections.
+mariadb-medical  | Version: '11.2.2-MariaDB-1:11.2.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
+mariadb-medical  | 2024-01-28 22:48:55+02:00 [Note] [Entrypoint]: Temporary server started.
+mariadb-medical  | 2024-01-28 22:48:59+02:00 [Note] [Entrypoint]: Creating database Medical
+mariadb-medical  | 2024-01-28 22:48:59+02:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:48:59+02:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/doctori.sql
+mariadb-medical  | 
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:49:00+02:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/pacienti.sql
+mariadb-medical  | 
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:49:00+02:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/programari.sql
+mariadb-medical  | 
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:49:00+02:00 [Note] [Entrypoint]: Stopping temporary server
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] InnoDB: FTS optimize thread exiting.
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] InnoDB: Starting shutdown...
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] InnoDB: Buffer pool(s) dump completed at 240128 22:49:00
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] InnoDB: Shutdown completed; log sequence number 62651; transaction id 47
+mariadb-medical  | 2024-01-28 22:49:00 0 [Note] mariadbd: Shutdown complete
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:49:00+02:00 [Note] [Entrypoint]: Temporary server stopped
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:49:00+02:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+mariadb-medical  | 
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] Starting MariaDB 11.2.2-MariaDB-1:11.2.2+maria~ubu2204 source revision 929532a9426d085111c24c63de9c23cc54382259 as process 1
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Number of transaction pools: 1
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Using liburing
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Completed initialization of buffer pool
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: End of log at LSN=62651
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Opened 3 undo tablespaces
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: 128 rollback segments in 3 undo tablespaces are active.
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: log sequence number 62651; transaction id 47
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] Plugin 'FEEDBACK' is disabled.
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] Plugin 'wsrep-provider' is disabled.
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] InnoDB: Buffer pool(s) load completed at 240128 22:49:01
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] Server socket created on IP: '0.0.0.0'.
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] Server socket created on IP: '::'.
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] mariadbd: Event Scheduler: Loaded 0 events
+mariadb-medical  | 2024-01-28 22:49:01 0 [Note] mariadbd: ready for connections.
+mariadb-medical  | Version: '11.2.2-MariaDB-1:11.2.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+mariadb-medical  | 2024-01-28 22:50:51 12 [Warning] Aborted connection 12 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 11 [Warning] Aborted connection 11 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 7 [Warning] Aborted connection 7 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 6 [Warning] Aborted connection 6 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 5 [Warning] Aborted connection 5 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 3 [Warning] Aborted connection 3 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 4 [Warning] Aborted connection 4 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 9 [Warning] Aborted connection 9 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 10 [Warning] Aborted connection 10 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+mariadb-medical  | 2024-01-28 22:50:51 8 [Warning] Aborted connection 8 to db: 'Medical' user: 'root' host: '172.21.0.3' (Got an error reading communication packets)
+gateway          | 2024-01-28T21:34:43.461Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+idm              | Jan 28, 2024 9:34:43 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:34:43 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+gateway          | 2024-01-28T21:34:43.498Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:34:44.720Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:34:44 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:34:44.751Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:34:44.776Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:44.779Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:44.785Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:34:44 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:34:44.803Z  INFO 7 --- [io-8080-exec-10]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:34:44.817Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:44.821Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:47.267Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:34:47 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:34:47.295Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:34:47.311Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:47.315Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:47.396Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:34:47 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:34:47.412Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:34:47.423Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:47.426Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:47.516Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:34:47 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:34:47.534Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:34:47.547Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:47.550Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:58.585Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:34:58 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:34:58.604Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:34:58.620Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:34:58.622Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:35:51.033Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: POST, Path: /api/medical_office/login
+idm              | Jan 28, 2024 9:35:51 PM medical.idm.IDMServer$IdentityManagementService authorize
+idm              | INFO: Authorization foradmin
+idm              | Jan 28, 2024 9:35:51 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+gateway          | 2024-01-28T21:35:51.066Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: POST, Path: /api/medical_office/login, Status: 200
+gateway          | 2024-01-28T21:35:52.361Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:35:52 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:35:52.379Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:35:52.403Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:35:52.409Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:35:52.417Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:35:52 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:35:52.430Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:35:52.447Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:35:52.450Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:46.156Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:46.156Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:46.167Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:46 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:46.197Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:46.212Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:46.215Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:48.113Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:48.113Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:48.124Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:48 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:48.152Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:48.176Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:48.181Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.212Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:51.212Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.223Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:51 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:51.244Z  INFO 7 --- [io-8080-exec-10]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:51.260Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.263Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.299Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:51.299Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.306Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:51 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:51.322Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:51.335Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.339Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.435Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:51.435Z  INFO 7 --- [io-8080-exec-10]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.444Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:51 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:51.461Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:51.479Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:51.482Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.076Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:54.077Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.083Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:54 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:54.104Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:54.128Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.132Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.200Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:54.201Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.207Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:54 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:54.222Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:54.238Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.241Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.308Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:54.308Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.315Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:54 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:54.332Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:54.348Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.351Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.545Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:54.545Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.556Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:54 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:54.581Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:54.597Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:54.600Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:57.546Z  INFO 7 --- [io-8080-exec-10]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:57 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:57.567Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:57.602Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:57.603Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:57.610Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:57.614Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+idm              | Jan 28, 2024 9:37:57 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+gateway          | 2024-01-28T21:37:57.626Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+pdp              | 2024-01-28T21:37:57.637Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:57.646Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:57.650Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.448Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:58 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:58.475Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:58.506Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.512Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.604Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:58 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:58.624Z  INFO 7 --- [io-8080-exec-10]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:58.637Z  INFO 7 --- [io-8080-exec-10]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.639Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.758Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:58 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:58.778Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:58.792Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.794Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.896Z  INFO 7 --- [nio-8080-exec-7]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:58 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:58.911Z  INFO 7 --- [nio-8080-exec-2]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:58.925Z  INFO 7 --- [nio-8080-exec-2]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:58.928Z  INFO 7 --- [nio-8080-exec-7]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.040Z  INFO 7 --- [nio-8080-exec-6]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:59 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:59.067Z  INFO 7 --- [nio-8080-exec-3]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:59.085Z  INFO 7 --- [nio-8080-exec-3]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.088Z  INFO 7 --- [nio-8080-exec-6]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.179Z  INFO 7 --- [nio-8080-exec-8]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:59 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:59.197Z  INFO 7 --- [nio-8080-exec-4]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:59.213Z  INFO 7 --- [nio-8080-exec-4]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.215Z  INFO 7 --- [nio-8080-exec-8]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.340Z  INFO 7 --- [nio-8080-exec-9]                                          : Client: localhost:8080, Method: OPTIONS, Path: /api/medical_office/physicians/
+gateway          | 2024-01-28T21:37:59.340Z  INFO 7 --- [nio-8080-exec-9]                                          : Method: OPTIONS, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.348Z  INFO 7 --- [nio-8080-exec-1]                                          : Client: localhost:8080, Method: GET, Path: /api/medical_office/physicians/
+idm              | Jan 28, 2024 9:37:59 PM medical.idm.IDMServer$IdentityManagementService validate
+idm              | INFO: Token validation
+pdp              | 2024-01-28T21:37:59.362Z  INFO 7 --- [nio-8080-exec-5]                                          : Client: pdp:8080, Method: GET, Path: /api/medical_office/physicians/
+pdp              | 2024-01-28T21:37:59.386Z  INFO 7 --- [nio-8080-exec-5]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
+gateway          | 2024-01-28T21:37:59.388Z  INFO 7 --- [nio-8080-exec-1]                                          : Method: GET, Path: /api/medical_office/physicians/, Status: 200
