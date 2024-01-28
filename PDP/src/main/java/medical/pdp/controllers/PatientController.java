@@ -70,6 +70,21 @@ public class PatientController
         }
     }
 
+    @GetMapping("/patients")
+    public EntityModel<Patient> oneByIdUser(@RequestParam long idUser)
+    {
+        Patient patient = patientRepository.findByIdUser(idUser);
+
+        if(patient != null)
+        {
+            return patientModelAssembler.toModel(patient);
+        }
+        else
+        {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent user");
+        }
+    }
+
     @PutMapping("/patients/{id}")
     public EntityModel<Patient> update(@RequestBody Patient newPatient, @PathVariable String id)
     {

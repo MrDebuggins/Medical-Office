@@ -84,7 +84,7 @@ public class RoleFilterFunctions
             if(path.matches(allPatientsRegex))
             {
                 if(role == 0)
-                return next.handle(req);
+                    return next.handle(req);
                 else if(role == 1 && req.method() == HttpMethod.GET)
                     return next.handle(req);
                 else

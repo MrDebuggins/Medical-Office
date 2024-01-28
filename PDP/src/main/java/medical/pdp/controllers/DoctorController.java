@@ -84,6 +84,17 @@ public class DoctorController {
         return doctorModelAssembler.toModel(doctor);
     }
 
+    @GetMapping("/physicians")
+    public EntityModel<Doctor> oneByIdUser(@RequestParam long idUser)
+    {
+        Doctor doctor = doctorRepository.findByIdUser(idUser);
+
+        if(doctor == null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Nonexistent doctor");
+
+        return doctorModelAssembler.toModel(doctor);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/physicians/")
     public EntityModel<Doctor> create(@RequestBody Doctor doctor)

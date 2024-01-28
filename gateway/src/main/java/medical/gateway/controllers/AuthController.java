@@ -3,12 +3,14 @@ package medical.gateway.controllers;
 import io.grpc.ManagedChannelBuilder;
 import medical.gateway.DTOs.DoctorDTO;
 import medical.gateway.DTOs.LoginInfo;
+import medical.gateway.DTOs.LoginResponse;
 import medical.gateway.DTOs.PatientDTO;
 import medical.gateway.entities.Doctor;
 import medical.gateway.entities.Patient;
 import medical.gateway.proto.IdentityManagementServiceGrpc;
 import medical.gateway.proto.Main;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,11 +42,34 @@ public class AuthController
                     .build();
             Main.Token token = IDM_Server.authorize(acc);
 
+            Main.IdentityResponse response = IDM_Server.validate(token);
+
+            if(response.getRole() == 1)
+            {
+                String doctor = restClient.getForObject("http://pdp:8080/api/medical_office/physicians?idUser=" + response.getId(), String.class);
+                LoginResponse loginResponse = new LoginResponse();
+                loginResponse.idUser = response.getId();
+                loginResponse.role = response.getRole();
+                loginResponse.token = token.getToken();
+                loginResponse.entity = doctor;
+                return new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
+            }
+
+            if(response.getRole() == 2)
+            {
+                String patient = restClient.getForObject("http://pdp:8080/api/medical_office/patients?idUser=" + response.getId(), String.class);
+                LoginResponse loginResponse = new LoginResponse();
+                loginResponse.idUser = response.getId();
+                loginResponse.role = response.getRole();
+                loginResponse.token = token.getToken();
+                loginResponse.entity = patient;
+                return new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
+            }
+
             return new ResponseEntity<String>(token.getToken(), HttpStatus.OK);
         }
         catch (Exception ex)
         {
-            System.out.println(ex.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -92,7 +117,7 @@ public class AuthController
             doctorEntity.setEmail(doctor.email);
             doctorEntity.setPhone(doctor.phone);
             doctorEntity.setSpecialization(doctor.specialization);
-            ResponseEntity response = restClient.postForEntity("http://pdp:8080/doctors/", doctorEntity, Object.class);
+            ResponseEntity response = restClient.postForEntity("http://pdp:8080/api/medical_office/physicians/", doctorEntity, Object.class);
 
             if(response.getStatusCode() != HttpStatus.CREATED)
             {

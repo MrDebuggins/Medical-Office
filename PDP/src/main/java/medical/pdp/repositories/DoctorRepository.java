@@ -15,6 +15,8 @@ import java.util.List;
 public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
     Doctor findByIdDoctor(Long id_doctor);
 
+    Doctor findByIdUser(long idUser);
+
     Page<Doctor> findBySpecialization(Specialization s, PageRequest pageable);
 
     Page<Doctor> findByLastnameContains(String like, PageRequest pageable);
